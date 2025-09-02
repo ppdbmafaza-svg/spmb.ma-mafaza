@@ -6,6 +6,50 @@
   <title>SPMB MA Mafaza</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  <style>
+    /* CSS minimal untuk banner dan layout */
+    body { margin: 0; font-family: sans-serif; }
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #1A3D63; color: #fff; padding: 10px 20px;
+    }
+    .nav-links a { color: #fff; margin-left: 15px; text-decoration: none; }
+    .menu-toggle { cursor: pointer; display: none; }
+    @media(max-width:768px){ .nav-links{ display:none; flex-direction: column; } .nav-links.active{ display:flex; } .menu-toggle{ display:block; } }
+
+    /* Banner */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-image: url('banner.PNG');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .banner-btn {
+      position: absolute;
+      bottom: 30px;
+    }
+    .btn-primary {
+      padding: 10px 20px;
+      background-color: #ff6600;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* Section lainnya */
+    section { padding: 40px 20px; }
+    .cards { display: flex; gap: 20px; flex-wrap: wrap; }
+    .card { background: #f2f2f2; padding: 20px; border-radius: 10px; flex:1; min-width:250px; }
+    .timeline-steps { display: flex; gap:10px; padding:20px; }
+    .step { padding:10px 15px; background:#ddd; border-radius:5px; cursor:pointer; }
+    .step.active { background:#1A3D63; color:#fff; }
+  </style>
 </head>
 <body>
   
@@ -21,14 +65,12 @@
     </nav>
   </header>
 
+  <!-- Banner -->
   <section class="banner" id="beranda">
-  <img src="banner.PNG" alt="SPMB Mafaza Banner" class="banner-img">
-  <div class="banner-btn">
-    <a href="#program" class="btn-primary">Daftar Sekarang</a>
-  </div>
-</section>
-
-
+    <div class="banner-btn">
+      <a href="#program" class="btn-primary">Daftar Sekarang</a>
+    </div>
+  </section>
 
   <!-- Why Mafaza -->
   <section class="why-mafaza">
@@ -52,55 +94,47 @@
   <!-- Program -->
   <section class="program" id="program">
     <h2>Pilihan Program Pendaftaran</h2>
-    <p class="intro">Silakan pilih jalur pendaftaran sesuai kondisi kamu. Klik tombol formulir untuk mulai daftar.</p>
-
+    <p class="intro">Silakan pilih jalur pendaftaran sesuai kondisi kamu.</p>
     <div class="cards">
       <div class="card">
         <h3>Beasiswa Yatim & Dhuafa</h3>
-        <p class="desc">Dikhususkan bagi calon siswa yatim/piatu dan dari keluarga dhuafa, sebagai bentuk kepedulian MA Mafaza.</p>
         <ul>
           <li>📌 Syarat: Fotokopi KK, Akta, Surat Keterangan Yatim/Dhuafa.</li>
           <li>📝 Prosedur: Daftar online → Upload berkas → Verifikasi panitia.</li>
         </ul>
-        <a href="https://forms.gle/NHRE8w1vz3H46zdw8" class="btn-primary" target="_blank">Isi Formulir</a>
+        <a href="#" class="btn-primary">Isi Formulir</a>
       </div>
-
       <div class="card">
         <h3>Beasiswa Talenta</h3>
-        <p class="desc">Untuk calon siswa dengan prestasi akademik maupun non-akademik tingkat daerah/nasional.</p>
         <ul>
           <li>📌 Syarat: Fotokopi raport, sertifikat prestasi.</li>
           <li>📝 Prosedur: Daftar online → Upload berkas → Seleksi panitia.</li>
         </ul>
-        <a href="https://forms.gle/5PjYqwmJYXdsYPMQA" class="btn-primary" target="_blank">Isi Formulir</a>
+        <a href="#" class="btn-primary">Isi Formulir</a>
       </div>
-
       <div class="card">
         <h3>Jalur Reguler</h3>
-        <p class="desc">Jalur umum bagi semua calon siswa tanpa syarat khusus selain dokumen standar.</p>
         <ul>
           <li>📌 Syarat: Fotokopi KK, Akta, raport.</li>
           <li>📝 Prosedur: Daftar online → Upload berkas → Seleksi administrasi.</li>
         </ul>
-        <a href="https://forms.gle/JKSrw5qcvCTwVjEs5" class="btn-primary" target="_blank">Isi Formulir</a>
+        <a href="#" class="btn-primary">Isi Formulir</a>
       </div>
     </div>
   </section>
 
+  <!-- Timeline -->
   <div class="timeline-steps">
-  <div class="step active">Pendaftaran</div>
-  <div class="step">Seleksi Berkas</div>
-  <div class="step">Tes Masuk</div>
-  <div class="step">Pengumuman</div>
-  <div class="step">Daftar Ulang</div>
-</div>
-
+    <div class="step active">Pendaftaran</div>
+    <div class="step">Seleksi Berkas</div>
+    <div class="step">Tes Masuk</div>
+    <div class="step">Pengumuman</div>
+    <div class="step">Daftar Ulang</div>
+  </div>
 
   <!-- Admisi -->
   <section class="admisi" id="admisi">
     <h2>Admisi</h2>
-    
-
     <div class="biaya">
       <h3>Biaya Pendidikan</h3>
       <table>
@@ -131,8 +165,6 @@
     <p>✉️ spmb@ma-mafaza.sch.id</p>
     <p>📍 Jl. Pendidikan No.123, Yogyakarta</p>
   </footer>
+
 </body>
 </html>
-
-
-
