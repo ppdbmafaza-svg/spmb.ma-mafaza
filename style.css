@@ -236,3 +236,79 @@ footer {
   margin-bottom: 8px;
   font-size: 0.9rem;
 }
+
+/* 📱 Mobile (max 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+    display: block;
+  }
+
+  .banner {
+    height: 60vh; /* lebih pendek biar pas di hp */
+    padding-bottom: 10px;
+  }
+
+  .banner-btn .btn-primary {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* 📱📲 Tablet (601px – 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .navbar {
+    padding: 10px 30px;
+  }
+
+  .banner {
+    height: 70vh;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+/* 💻 Desktop (900px ke atas) */
+@media (min-width: 901px) {
+  .banner {
+    height: 80vh;
+  }
+
+  .card {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
+}
