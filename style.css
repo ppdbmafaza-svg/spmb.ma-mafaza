@@ -39,6 +39,7 @@ body {
 
 section {
   padding: 80px 10%;
+  padding-top: 100px; /* agar konten awal tidak langsung ketutupan navbar */
   text-align: center;
 }
 
@@ -335,3 +336,4 @@ footer {
   color: white;
   font-weight: bold;
 }
+
