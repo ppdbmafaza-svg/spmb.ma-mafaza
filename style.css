@@ -325,3 +325,16 @@ footer {
     gap: 25px;
   }
 }
+
+body {
+  background: var(--light);
+  color: var(--primary);
+  line-height: 1.6;
+  scroll-behavior: smooth; /* biar enak kalau klik navbar */
+}
+
+section {
+  padding: 80px 10%; /* lebih tinggi sedikit biar tidak ketutupan navbar */
+  text-align: center;
+}
+
