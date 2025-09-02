@@ -1,14 +1,15 @@
-// Timeline interaktif
+// Semua script dalam satu DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
+  // ================= TIMELINE =================
   const steps = document.querySelectorAll(".step");
-  steps.forEach((step, index) => {
+  steps.forEach((step) => {
     step.addEventListener("click", () => {
       steps.forEach(s => s.classList.remove("active"));
       step.classList.add("active");
     });
   });
 
-  // FAQ interaktif (smooth scroll)
+  // ================= FAQ (Accordion) =================
   const details = document.querySelectorAll("details");
   details.forEach((det) => {
     det.addEventListener("toggle", () => {
@@ -20,22 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Formulir dummy
+  // ================= FORMULIR DUMMY =================
   const form = document.getElementById("daftarForm");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const nama = form.nama.value;
-    const jalur = form.jalur.value;
-    alert(`Terima kasih ${nama}! Anda sudah memilih jalur ${jalur}. Data berhasil dikirim.`);
-    form.reset();
-  });
-});
+  if (form) {  // cek dulu biar nggak error kalau form ga ada
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nama = form.nama.value;
+      const jalur = form.jalur.value;
+      alert(`Terima kasih ${nama}! Anda sudah memilih jalur ${jalur}. Data berhasil dikirim.`);
+      form.reset();
+    });
+  }
 
-document.addEventListener("DOMContentLoaded", () => {
+  // ================= NAVBAR TOGGLE (MOBILE) =================
   const toggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
 
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+  if (toggle && navLinks) {
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
 });
