@@ -302,3 +302,36 @@ footer {
     height: 80vh;
   }
 }
+
+.timeline-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 40px 0;
+}
+.timeline-steps::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: var(--soft);
+  z-index: 1;
+}
+.step {
+  position: relative;
+  padding: 12px 18px;
+  background: var(--light);
+  border-radius: 20px;
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+.step.active {
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+}
