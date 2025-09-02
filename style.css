@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'PlusJakartaSans';
   src: url('fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900; 
+  font-weight: 100 900;
   font-style: normal;
 }
 @font-face {
@@ -34,12 +34,11 @@ body {
   color: var(--primary);
   line-height: 1.6;
   scroll-behavior: smooth;
-  padding-top: 75px; /* biar konten gak ketutupan navbar */
+  padding-top: 75px;
 }
 
 section {
   padding: 80px 10%;
-  padding-top: 100px; /* agar konten awal tidak langsung ketutupan navbar */
   text-align: center;
 }
 
@@ -60,7 +59,6 @@ h2 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.3s;
 }
 
 .navbar .logo {
@@ -83,7 +81,6 @@ h2 {
   color: var(--soft);
 }
 
-/* Toggle button (hamburger) */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -92,7 +89,7 @@ h2 {
 
 /* ==================== BANNER ==================== */
 .banner {
-  background: url('banner.jpg') no-repeat center center/cover;
+  background: url('banner.PNG') no-repeat center center/cover;
   height: 80vh;
   min-height: 400px;
   width: 100%;
@@ -226,8 +223,8 @@ footer {
   border-radius: 20px;
   z-index: 2;
   cursor: pointer;
-  transition: 0.3s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s;
 }
 
 .step.active {
@@ -237,8 +234,6 @@ footer {
 }
 
 /* ==================== RESPONSIVE ==================== */
-
-/* 📱 Mobile */
 @media (max-width: 600px) {
   .nav-links {
     position: fixed;
@@ -254,86 +249,21 @@ footer {
     transition: right 0.3s ease;
     z-index: 999;
   }
-
-  .nav-links a {
-    color: white !important;
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-
   .nav-links.active {
     right: 0;
   }
-
-  .menu-toggle {
-    display: block;
-  }
-  
-  .banner {
-    height: 60vh;
-    min-height: 300px;
-  }
-
-  .timeline-steps {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .timeline-steps::before {
-    display: none; /* garis tengah hilang di mobile */
-  }
+  .menu-toggle { display: block; }
+  .banner { height: 60vh; min-height: 300px; }
+  .timeline-steps { flex-direction: column; gap: 15px; }
+  .timeline-steps::before { display: none; }
 }
 
-/* 📲 Tablet */
 @media (min-width: 601px) and (max-width: 900px) {
-  .nav-links {
-    gap: 15px;
-  }
-  .banner {
-    height: 70vh;
-  }
+  .nav-links { gap: 15px; }
+  .banner { height: 70vh; }
 }
 
-/* 💻 Desktop */
 @media (min-width: 901px) {
-  .nav-links {
-    gap: 25px;
-  }
-  .banner {
-    height: 80vh;
-  }
+  .nav-links { gap: 25px; }
+  .banner { height: 80vh; }
 }
-
-.timeline-steps {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin: 40px 0;
-}
-.timeline-steps::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 8%;
-  right: 8%;
-  height: 3px;
-  background: var(--soft);
-  z-index: 1;
-}
-.step {
-  position: relative;
-  padding: 12px 18px;
-  background: var(--light);
-  border-radius: 20px;
-  z-index: 2;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: background 0.3s;
-}
-.step.active {
-  background: var(--accent);
-  color: white;
-  font-weight: bold;
-}
-
