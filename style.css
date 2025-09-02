@@ -237,138 +237,51 @@ footer {
   font-size: 0.9rem;
 }
 
-/* 📱 Mobile (max 600px) */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    padding: 10px 20px;
-    text-align: center;
-  }
-
-  .navbar a {
-    margin: 10px 0;
-    display: block;
-  }
-
-  .banner {
-    height: 60vh; /* lebih pendek biar pas di hp */
-    padding-bottom: 10px;
-  }
-
-  .banner-btn .btn-primary {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-
-  .cards {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 15px;
-  }
-
-  section {
-    padding: 40px 20px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
+/* ==================== NAVBAR ==================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 25, 49, 0.85);
+  backdrop-filter: blur(6px);
+  color: white;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s;
 }
 
-/* 📱📲 Tablet (601px – 900px) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .navbar {
-    padding: 10px 30px;
-  }
-
-  .banner {
-    height: 70vh;
-  }
-
-  .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card {
-    flex: 1 1 45%;
-    max-width: 45%;
-  }
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
-/* 💻 Desktop (900px ke atas) */
-@media (min-width: 901px) {
-  .banner {
-    height: 80vh;
-  }
-
-  .card {
-    flex: 1 1 30%;
-    max-width: 30%;
-  }
-}
-
-/* Default desktop */
 .nav-links {
   display: flex;
   gap: 20px;
 }
 
-/* Toggle hidden di desktop */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--soft);
+}
+
+/* Toggle button (hamburger) */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .nav-links {
-    display: none; /* hidden dulu */
-    flex-direction: column;
-    position: absolute;
-    top: 60px; 
-    left: 0;
-    width: 100%;
-    background: var(--primary);
-    padding: 15px 0;
-    text-align: center;
-    z-index: 100;
-  }
+/* ==================== RESPONSIVE ==================== */
 
-  .nav-links a {
-    margin: 10px 0;
-    display: block;
-    color: white;
-  }
-
-  .menu-toggle {
-    display: block; /* munculin ☰ */
-  }
-
-  .nav-links.active {
-    display: flex; /* aktif pas di klik */
-  }
-
-/* Default desktop */
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-/* Toggle hidden di desktop */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Mobile */
+/* 📱 Mobile */
 @media (max-width: 600px) {
   .nav-links {
     position: fixed;
@@ -380,13 +293,13 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     transition: right 0.3s ease;
     z-index: 999;
   }
 
   .nav-links a {
     color: white;
-    margin: 15px 0;
     font-size: 1.2rem;
   }
 
@@ -399,8 +312,16 @@ footer {
   }
 }
 
+/* 📲 Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .nav-links {
+    gap: 15px;
+  }
+}
 
-
-
-
-
+/* 💻 Desktop */
+@media (min-width: 901px) {
+  .nav-links {
+    gap: 25px;
+  }
+}
