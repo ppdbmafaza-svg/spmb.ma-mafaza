@@ -354,16 +354,21 @@ footer {
   .nav-links.active {
     display: flex; /* aktif pas di klik */
   }
+
+/* Default desktop */
+.nav-links {
+  display: flex;
+  gap: 20px;
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
 
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-});
+/* Toggle hidden di desktop */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
 
+/* Mobile */
 @media (max-width: 600px) {
   .nav-links {
     position: fixed;
@@ -385,10 +390,16 @@ document.addEventListener("DOMContentLoaded", () => {
     font-size: 1.2rem;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-links.active {
     right: 0;
   }
 }
+
+
 
 
 
