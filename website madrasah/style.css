@@ -1,0 +1,238 @@
+/* ==================== FONT ==================== */
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; 
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* ==================== PALET WARNA ==================== */
+:root {
+  --primary: #0a1931;
+  --secondary: #1a3d63;
+  --accent: #4a7fa7;
+  --light: #f6fafd;
+  --soft: #b3cfe5;
+}
+
+/* ==================== GLOBAL ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PlusJakartaSans", sans-serif;
+}
+body {
+  background: var(--light);
+  color: var(--primary);
+  line-height: 1.6;
+}
+section {
+  padding: 60px 10%;
+  text-align: center;
+}
+h2 {
+  margin-bottom: 30px;
+  color: var(--secondary);
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 25, 49, 0.85);
+  backdrop-filter: blur(6px);
+  color: white;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s;
+}
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: var(--soft);
+}
+
+/* ==================== BANNER ==================== */
+/* Banner dengan flyer utuh */
+.banner {
+  background: url('banner.jpg') no-repeat center center/cover;
+  height: 80vh;               /* ukuran awal kamu */
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;      /* tombol tetap di bawah */
+  padding-bottom: 20px;
+}
+
+.banner::after {
+  content: none;              /* hilangkan overlay gelap */
+}
+
+.banner-btn .btn-primary {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: white;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.banner-btn .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* ==================== BUTTON UMUM ==================== */
+.btn-primary {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ==================== CARDS ==================== */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: var(--soft);
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ==================== TABLE ==================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th {
+  background: var(--secondary);
+  color: white;
+  padding: 10px;
+}
+td {
+  border: 1px solid var(--soft);
+  padding: 10px;
+}
+
+/* ==================== FAQ ==================== */
+details {
+  background: var(--soft);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+details[open] summary {
+  color: var(--accent);
+}
+
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ==================== TIMELINE ==================== */
+.timeline-steps {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+.step {
+  position: relative;
+  padding: 10px 20px;
+  background: var(--soft);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.step.active {
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+}
+
+/* ==================== ANIMASI ==================== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.program .intro {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.program .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.program .card h3 {
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.program .card .desc {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.program .card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.program .card ul li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
