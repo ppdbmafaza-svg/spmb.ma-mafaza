@@ -69,7 +69,10 @@ h2 {
 
 /* ==================== BANNER ==================== */
 .banner {
-  background: url('banner.PNG') no-repeat center center/cover;
+  background-image: url('./banner.png'); /* gunakan huruf kecil dan path relatif dari HTML */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   height: 80vh;
   width: 100%;
   display: flex;
@@ -77,9 +80,6 @@ h2 {
   align-items: flex-end;
   position: relative;
   padding-bottom: 20px;
-}
-.banner-btn {
-  display: none; /* Tombol "Daftar Sekarang" dihapus */
 }
 
 /* ==================== BUTTON UMUM ==================== */
