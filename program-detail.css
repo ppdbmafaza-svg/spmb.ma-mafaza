@@ -1,90 +1,158 @@
-/* ==================== FONT ==================== */
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900; 
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
-}
-
-/* ==================== PALET WARNA ==================== */
 :root {
-  --primary: #0A1931;
-  --secondary: #1A3D63;
-  --accent: #4A7FA7;
-  --soft: #B3CFE5;
-  --light: #F6FAFD;
+  --primary: #0A1931;        
+  --secondary: #1A3D63;      
+  --accent: #4A7FA7;         
+  --light-bg: #F6FAFD;       
+  --gradient-light: #B3CFE5; 
 }
 
-/* ==================== GLOBAL ==================== */
-* { margin:0; padding:0; box-sizing:border-box; font-family:"PlusJakartaSans",sans-serif; }
-body { background:var(--light); color:var(--primary); line-height:1.6; }
-section { padding:60px 10%; text-align:center; }
-h2 { margin-bottom:30px; color:var(--secondary); }
+/* ==================== PROGRAM DETAIL PAGE ==================== */
+.program-detail-page {
+  width: 100%;
+  font-family: 'PlusJakartaSans', sans-serif;
+  color: var(--primary);
+}
 
-/* ==================== NAVBAR ==================== */
-.navbar { display:flex; justify-content:space-between; align-items:center; background:var(--primary); padding:15px 10%; position:sticky; top:0; z-index:1000; }
-.navbar .logo a { color:var(--light); font-size:1.5rem; font-weight:bold; text-decoration:none; }
-.navbar .nav-links { display:flex; gap:25px; }
-.navbar .nav-links a { color:var(--light); text-decoration:none; font-size:1rem; transition:color 0.3s; }
-.navbar .nav-links a:hover { color:var(--soft); }
-.navbar .menu-toggle { display:none; cursor:pointer; font-size:1.5rem; color:var(--light); }
-
-/* ==================== BANNER ==================== */
-.banner { position:relative; overflow:hidden; background:url('banner.PNG') no-repeat center center/cover; height:80vh; display:flex; justify-content:center; align-items:flex-end; padding-bottom:20px; z-index:0; }
-.banner .container { position:relative; z-index:2; }
-
-/* ==================== PROGRAM DETAIL ==================== */
-.program-detail-page { width:100%; color:var(--primary); }
-.program-detail { text-align:left; padding:40px 10%; border-radius:14px; background:linear-gradient(to bottom,var(--light),var(--soft)); margin-bottom:40px; }
-.program-detail h2 { color:var(--secondary); margin-bottom:15px; }
-.program-detail p { line-height:1.6; }
+/* ==================== GRADASI SECTION ==================== */
+.program-detail, 
+.alur-timeline, 
+.galeri {
+  position: relative;
+  background: linear-gradient(to bottom, var(--light-bg), var(--gradient-light));
+  padding: 60px 10%;
+  border-radius: 14px;
+  margin-bottom: 40px;
+}
 
 /* ==================== ALUR TIMELINE ==================== */
-.alur-timeline { background:linear-gradient(to bottom,var(--soft),var(--light)); padding:40px 10%; border-radius:14px; box-shadow:0 4px 12px rgba(10,25,49,0.1); margin:40px 0; }
-.alur-timeline h3 { color:var(--secondary); margin-bottom:30px; }
-.timeline { display:flex; flex-direction:column; gap:30px; }
-.timeline-item { display:flex; justify-content:center; gap:20px; align-items:flex-start; }
-.timeline-item .circle { min-width:40px; min-height:40px; background:var(--secondary); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; }
-.timeline-item .content { max-width:500px; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(10,25,49,0.1); text-align:left; }
-.timeline-item .content h4 { margin-bottom:10px; color:var(--secondary); }
-.timeline-item .content ul, .timeline-item .content ol { margin-left:20px; line-height:1.6; color:var(--primary); }
+.alur-timeline h3 {
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: 30px;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+}
+.timeline-item .circle {
+  min-width: 40px;
+  min-height: 40px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.timeline-item .content {
+  text-align: left;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
+}
+.timeline-item .content h4 {
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+.timeline-item .content ul,
+.timeline-item .content ol {
+  margin-left: 20px;
+  line-height: 1.6;
+  color: var(--primary);
+}
 
 /* ==================== GALERI HORIZONTAL ==================== */
-.galeri {
-  background: linear-gradient(to bottom,var(--light),var(--soft));
-  padding:40px 5%;
-  border-radius:14px;
-  overflow:hidden;
-  position:relative;
+.galeri h3 {
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: 20px;
 }
-.galeri h3 { color:var(--secondary); margin-bottom:30px; }
-.galeri .slider { display:flex; gap:15px; animation: slide 25s linear infinite; }
-.galeri .slider .card { flex:0 0 auto; width:420px; border-radius:12px; overflow:hidden; }
-.galeri .slider .card img { width:100%; height:auto; object-fit:contain; transition:transform 0.3s ease; }
-.galeri .slider .card img:hover { transform:scale(1.05); }
+.galeri .cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+.galeri .cards::-webkit-scrollbar { height: 10px; }
+.galeri .cards::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; }
+.galeri .cards::-webkit-scrollbar-track { background: var(--light-bg); border-radius: 5px; }
 
-/* keyframes horizontal scroll */
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* sesuaikan jumlah gambar */
+.galeri .cards .card {
+  flex: 0 0 auto;
+  width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: none;
+}
+.galeri .cards .card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.galeri .cards .card img:hover {
+  transform: scale(1.05);
 }
 
 /* ==================== TOMBOL FORMULIR ==================== */
-.btn-primary-section { display:flex; justify-content:center; background:linear-gradient(to bottom,var(--soft),var(--light)); padding:40px 0; border-radius:14px; }
-.btn-primary { display:inline-block; background:linear-gradient(135deg,var(--secondary),var(--accent)); color:white; padding:14px 28px; border-radius:12px; text-decoration:none; text-align:center; transition: transform 0.2s, box-shadow 0.3s; }
-.btn-primary:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+.btn-primary-section {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 100%);
+  padding: 40px 0;
+  border-radius: 14px;
+}
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
 
 /* ==================== WHATSAPP FLOATING ==================== */
-.whatsapp-chat { position:fixed; bottom:25px; right:25px; width:60px; height:60px; z-index:1000; }
-.whatsapp-chat img { width:100%; height:100%; object-fit:contain; }
+.whatsapp-chat {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+}
+.whatsapp-chat img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 /* ==================== RESPONSIVE ==================== */
-@media(max-width:1024px){ .timeline-item{flex-direction:column;gap:15px;} .galeri .slider .card{width:350px;} }
-@media(max-width:768px){ section{padding:40px 5%;} .galeri .slider .card{width:300px;} }
-@media(max-width:480px){ .galeri .slider .card{width:250px;} .btn-primary{width:100%; padding:12px 20px;} }
+@media (max-width: 1024px) {
+  .timeline-item { flex-direction: column; gap: 15px; }
+  .galeri .cards { gap: 12px; }
+}
+@media (max-width: 768px) {
+  .program-detail { padding: 40px 5%; }
+  .galeri .cards { gap: 10px; }
+}
+@media (max-width: 480px) {
+  .btn-primary { width: 100%; padding: 12px 20px; }
+  .galeri .cards .card { width: 80%; }
+}
