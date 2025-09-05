@@ -1,6 +1,6 @@
 :root {
   --primary: #0A1931;      /* warna utama teks/judul */
-  --secondary: #1A3D63;    /* warna highlight / circle timeline */
+  --secondary: #1A3D63;    /* warna highlight / circle timeline & judul card */
   --accent: #4A7FA7;       /* warna aksen / tombol */
   --light-bg: #F6FAFD;     /* background section terang */
   --gradient-light: #B3CFE5; /* gradasi lembut */
@@ -65,11 +65,13 @@
 }
 .timeline-item .content h4 {
   margin-bottom: 10px;
+  color: var(--secondary);
 }
 .timeline-item .content ul,
 .timeline-item .content ol {
   margin-left: 20px;
   line-height: 1.6;
+  color: var(--primary);
 }
 
 /* ==================== GALERI ==================== */
@@ -101,17 +103,27 @@
   padding: 0;
   border-radius: 10px;
   overflow: hidden;
-  background: white; /* card tetap putih */
+  background: white;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
 }
 .galeri .cards .card img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 200px;        /* batasi tinggi gambar */
+  object-fit: cover;    /* proporsional tapi memenuhi card */
   transition: transform 0.3s ease;
 }
 .galeri .cards .card img:hover {
   transform: scale(1.05);
+}
+.galeri .cards .card h4 {
+  margin: 10px 15px 5px 15px;
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+.galeri .cards .card p {
+  margin: 0 15px 15px 15px;
+  color: var(--primary);
+  font-size: 0.95rem;
 }
 
 /* ==================== TOMBOL FORMULIR ==================== */
@@ -171,5 +183,8 @@
   .btn-primary {
     width: 100%;
     padding: 12px 20px;
+  }
+  .galeri .cards .card img {
+    height: 150px; /* lebih kecil untuk HP */
   }
 }
