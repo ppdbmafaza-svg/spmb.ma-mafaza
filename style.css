@@ -56,22 +56,22 @@ h2 { margin-bottom:30px; color:var(--secondary); }
 .why-mafaza .card p { font-size:0.95rem; line-height:1.6; color:var(--primary); }
 
 /* ==================== PROGRAM ==================== */
-.program { background:linear-gradient(to bottom,var(--soft),var(--light)); }
+.program { background: linear-gradient(to bottom,var(--soft),var(--light)); }
 .program .intro { margin-bottom:30px; font-size:1rem; color:var(--primary); }
 .program .card { text-align:center; min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:20px; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:all 0.3s ease; }
 .program .card h3 { margin-bottom:10px; color:var(--secondary); }
 .program .card .desc { margin-bottom:15px; font-size:0.95rem; color:#333; }
-.program .card .btn-group { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
-.program .card .btn-group .btn-primary { flex:1 1 auto; min-width:150px; }
+.program .card .btn-group { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:auto; }
+.program .card .btn-group .btn-primary { flex:1 1 auto; min-width:150px; text-align:center; }
 
 /* ==================== ADMISI ==================== */
 .admisi { background: linear-gradient(to bottom,var(--light),var(--soft)); }
 .admisi h2 { font-size:2rem; color:var(--secondary); margin-bottom:40px; }
 .admisi .card { padding:25px 20px; border-top:6px solid var(--accent); box-shadow:0 4px 12px rgba(10,25,49,0.15); display:flex; flex-direction:column; align-items:center; text-align:center; }
 .admisi .card:hover { transform: translateY(-6px); box-shadow:0 8px 20px rgba(10,25,49,0.25); }
-.btn-group { display:flex; gap:15px; justify-content:center; margin-top:20px; flex-wrap:wrap; }
-.btn-group .btn-wa { flex:1 1 auto; min-width:150px; text-align:center; background:linear-gradient(135deg,var(--secondary),var(--accent)); color:white; padding:12px 24px; border-radius:10px; text-decoration:none; transition: transform 0.2s, box-shadow 0.3s; }
-.btn-group .btn-wa:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.25); }
+.admisi .btn-group { display:flex; gap:15px; justify-content:center; margin-top:20px; flex-wrap:wrap; }
+.admisi .btn-group .btn-wa { flex:1 1 auto; min-width:150px; text-align:center; background: linear-gradient(135deg,var(--secondary),var(--accent)); color:white; padding:12px 24px; border-radius:10px; text-decoration:none; transition: transform 0.2s, box-shadow 0.3s; }
+.admisi .btn-group .btn-wa:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.25); }
 
 /* ==================== FAQ ==================== */
 .faq { width:100%; background: linear-gradient(to top,var(--secondary),var(--soft)); padding:60px 10%; text-align:left; }
@@ -91,6 +91,7 @@ footer { background:var(--primary); color:white; text-align:center; padding:20px
   .cards .card { flex:1 1 calc(50% - 15px); max-width:calc(50% - 15px); }
   .program .card { min-height:auto; text-align:center; }
   .program .card .btn-group { flex-direction:column; gap:10px; }
+  .admisi .btn-group { flex-direction:column; gap:10px; }
   .navbar .nav-links { display:none; flex-direction:column; gap:15px; background:var(--primary); position:absolute; top:60px; right:10%; padding:10px 20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
   .navbar .nav-links.active { display:flex; }
   .navbar .menu-toggle { display:block; }
@@ -100,4 +101,5 @@ footer { background:var(--primary); color:white; text-align:center; padding:20px
   .cards { gap:10px; padding:0 5px; }
   .cards .card { flex:1 1 100%; max-width:100%; }
   .program .card .btn-group .btn-primary { width:100%; }
+  .admisi .btn-group .btn-wa { width:100%; }
 }
