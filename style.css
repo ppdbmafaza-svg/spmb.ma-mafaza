@@ -89,11 +89,19 @@ h2 {
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 20px;
-  z-index: 0;
 }
-.banner .container {
-  position: relative;
-  z-index: 2;
+.banner-btn .btn-primary {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: white;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.banner-btn .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 /* ==================== BUTTON UMUM ==================== */
@@ -102,7 +110,6 @@ h2 {
   color: white;
   padding: 12px 24px;
   border-radius: 10px;
-  text-decoration: none;
   transition: transform 0.2s, box-shadow 0.3s;
 }
 .btn-primary:hover {
@@ -110,91 +117,208 @@ h2 {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* ==================== CARDS BERANDA ==================== */
-.cards.beranda .card {
-  background: var(--light);
-  border-radius: 14px;
+/* ==================== CARDS UMUM ==================== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0 auto;
+}
+.cards .card {
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
   padding: 25px 20px;
+  border-radius: 14px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--light);
+  cursor: pointer;
 }
-.cards.beranda .card:hover {
+.cards .card:hover {
   transform: translateY(-10px) scale(1.03);
   box-shadow: 0 12px 24px rgba(10,25,49,0.25);
 }
 
-/* ==================== CARDS PROGRAM-DETAIL ==================== */
-.program-detail .cards .card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 14px;
-  padding: 25px 20px;
-  text-align: left;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Animasi masuk scroll */
+.card.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
 }
-.program-detail .cards .card:hover {
+.card.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================== WHY MAFAZA ==================== */
+.why-mafaza {
+  background: linear-gradient(to bottom, var(--light), var(--soft));
+}
+.why-mafaza .card {
+  border-top: 6px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(10,25,49,0.15);
+}
+.why-mafaza .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(10,25,49,0.25);
 }
-.program-detail .cards .card h3 {
-  margin-bottom: 15px;
+.why-mafaza .card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
   color: var(--secondary);
 }
-.program-detail .cards .card ul,
-.program-detail .cards .card ol {
-  padding-left: 20px;
+.why-mafaza .card p {
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin-top: 10px;
+  color: var(--primary);
 }
 
-/* ==================== GALERI PROGRAM ==================== */
-.program-detail .galeri {
-  margin-top: 40px;
+/* ==================== ADMISI ==================== */
+.admisi {
+  background: linear-gradient(to bottom, var(--light), var(--soft));
+}
+.admisi h2 {
+  font-size: 2rem;
+  color: var(--secondary);
   margin-bottom: 40px;
 }
-.program-detail .galeri .cards .card img {
-  width: 100%;
+.admisi .card {
+  border-top: 6px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(10,25,49,0.15);
+  padding: 25px 20px;
+  text-align: center;
+}
+.admisi .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(10,25,49,0.25);
+}
+.admisi .card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--secondary);
+}
+.admisi .card p {
+  font-size: 0.95rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.btn-group .btn-wa {
+  flex: 1 1 auto;
+  text-align: center;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: white;
+  padding: 12px 24px;
   border-radius: 10px;
-  object-fit: cover;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.btn-group .btn-wa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* ==================== WhatsApp floating button ==================== */
-.whatsapp-chat {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  z-index: 10000;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-}
-.whatsapp-chat:hover {
-  transform: scale(1.1);
-}
-.whatsapp-chat img {
+/* ==================== FAQ ==================== */
+.faq {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background: linear-gradient(to top, var(--secondary), var(--soft));
+  padding: 60px 10%;
+  box-sizing: border-box;
+  text-align: left;
+}
+.faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--secondary);
+}
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq details {
+  background: white;
+  border: 1px solid var(--soft);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.faq details:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.faq summary {
+  font-weight: 600;
+  color: var(--primary);
+}
+.faq p {
+  margin-top: 10px;
+  color: #333;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
-  .cards.beranda .card,
-  .program-detail .cards .card { flex: 1 1 calc(33.33% - 20px); max-width: calc(33.33% - 20px); }
+  .cards .card {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+  }
 }
 @media (max-width: 768px) {
-  .cards.beranda .card,
-  .program-detail .cards .card { flex: 1 1 calc(50% - 15px); max-width: calc(50% - 15px); }
-  .navbar .nav-links { display: none; flex-direction: column; gap: 15px; background: var(--primary); position: absolute; top: 60px; right: 10%; padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-  .navbar .nav-links.active { display: flex; }
-  .navbar .menu-toggle { display: block; }
+  .cards .card {
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--primary);
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .navbar .nav-links.active {
+    display: flex;
+  }
+  .navbar .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--light);
+  }
 }
 @media (max-width: 480px) {
-  section { padding: 40px 5%; }
-  .cards.beranda .card,
-  .program-detail .cards .card { flex: 1 1 100%; max-width: 100%; }
+  section {
+    padding: 40px 5%;
+  }
+  .cards {
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .cards .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
