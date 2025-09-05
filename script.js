@@ -1,6 +1,3 @@
-// ==================== SCRIPT.JS FINAL ====================
-
-// Tunggu sampai DOM siap
 document.addEventListener("DOMContentLoaded", () => {
 
   // -------------------- Timeline interaktif --------------------
@@ -36,20 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -------------------- Animasi cards saat scroll --------------------
-  const cards = document.querySelectorAll(".card");
-  const animateCards = () => {
-    const triggerBottom = window.innerHeight * 0.9;
-    cards.forEach(card => {
-      const cardTop = card.getBoundingClientRect().top;
-      if(cardTop < triggerBottom){
-        card.classList.add("show");
-      }
-    });
-  };
-  window.addEventListener("scroll", animateCards);
-  animateCards(); // cek saat load halaman juga
-
   // -------------------- Bubble otomatis di banner --------------------
   const banner = document.querySelector(".banner");
   if(banner){
@@ -58,17 +41,35 @@ document.addEventListener("DOMContentLoaded", () => {
       const bubble = document.createElement("div");
       bubble.classList.add("bubble");
 
-      const size = Math.random() * 30 + 10; // 10-40px
+      const size = Math.random() * 30 + 10; 
       bubble.style.width = `${size}px`;
       bubble.style.height = `${size}px`;
-
-      bubble.style.left = `${Math.random() * 100}%`; // posisi horizontal random
-      bubble.style.animationDuration = `${Math.random() * 10 + 8}s`; // 8-18s
-      bubble.style.animationDelay = `${Math.random() * 5}s`; // 0-5s
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.animationDuration = `${Math.random() * 10 + 8}s`;
+      bubble.style.animationDelay = `${Math.random() * 5}s`;
 
       banner.appendChild(bubble);
     }
   }
+
+  // -------------------- Animasi card program pakai IntersectionObserver --------------------
+  const cards = document.querySelectorAll(".program .card");
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  cards.forEach(card => observer.observe(card));
 
 });
 
@@ -81,25 +82,3 @@ if(toggle && navLinks){
     navLinks.classList.toggle("active");
   });
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".program .card");
-
-  const observerOptions = {
-    root: null, // viewport
-    rootMargin: "0px",
-    threshold: 0.2 // 20% card terlihat
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show"); // tambahkan class .show
-        observer.unobserve(entry.target);   // cukup sekali saja
-      }
-    });
-  }, observerOptions);
-
-  cards.forEach(card => {
-    observer.observe(card);
-  });
-});
