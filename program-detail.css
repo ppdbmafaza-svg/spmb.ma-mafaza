@@ -1,9 +1,9 @@
 :root {
   --primary: #0A1931;      /* warna utama teks/judul */
-  --secondary: #1A3D63;    /* warna untuk highlight / circle timeline */
+  --secondary: #1A3D63;    /* warna highlight / circle timeline */
   --accent: #4A7FA7;       /* warna aksen / tombol */
-  --light-bg: #F6FAFD;     /* background terang */
-  --gradient-light: #B3CFE5; /* gradasi ringan */
+  --light-bg: #F6FAFD;     /* background section terang */
+  --gradient-light: #B3CFE5; /* gradasi lembut */
 }
 
 /* ==================== PROGRAM DETAIL PAGE ==================== */
@@ -40,7 +40,7 @@
 }
 .timeline-item {
   display: flex;
-  justify-content: center; /* rata tengah */
+  justify-content: center;
   gap: 20px;
   align-items: flex-start;
 }
@@ -101,8 +101,8 @@
   padding: 0;
   border-radius: 10px;
   overflow: hidden;
-  background: none;
-  box-shadow: none;
+  background: white; /* card tetap putih */
+  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
 }
 .galeri .cards .card img {
   width: 100%;
