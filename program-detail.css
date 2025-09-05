@@ -99,17 +99,17 @@
 }
 .galeri .cards .card {
   width: 100%;
-  max-width: none;
+  max-width: 350px;  /* batasi lebar card */
   padding: 0;
   border-radius: 10px;
   overflow: hidden;
-  background: white;
+  background: white; /* card putih */
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
 }
 .galeri .cards .card img {
   width: 100%;
-  height: 200px;        /* batasi tinggi gambar */
-  object-fit: cover;    /* proporsional tapi memenuhi card */
+  height: auto;          /* proporsional, sesuai asli */
+  object-fit: contain;    /* gambar tetap utuh */
   transition: transform 0.3s ease;
 }
 .galeri .cards .card img:hover {
@@ -184,7 +184,10 @@
     width: 100%;
     padding: 12px 20px;
   }
+  .galeri .cards .card {
+    max-width: 100%;  /* card lebar penuh di HP */
+  }
   .galeri .cards .card img {
-    height: 150px; /* lebih kecil untuk HP */
+    max-height: none; /* tetap proporsional, asli */
   }
 }
