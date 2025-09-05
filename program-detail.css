@@ -1,25 +1,39 @@
 /* ==================== PROGRAM DETAIL PAGE ==================== */
+:root {
+  --primary: #0A1931;
+  --secondary: #1E90FF;
+  --accent: #00BFFF;
+  --soft: #F5F9FF;
+  --light: #FFFFFF;
+}
+
 .program-detail-page {
   width: 100%;
   font-family: 'PlusJakartaSans', sans-serif;
-  color: #0A1931;
+  color: var(--primary);
 }
 
-/* Section program selang-seling */
-.program-detail:nth-child(odd) {
-  background: var(--soft);
+/* ==================== SECTION GRADASI ==================== */
+.program-detail.section-1 { 
+  background: linear-gradient(to bottom, var(--light), var(--secondary));
 }
-.program-detail:nth-child(even) {
-  background: var(--light);
+.program-detail.section-2 {
+  background: linear-gradient(to bottom, var(--secondary), var(--light));
 }
+.program-detail.section-3 {
+  background: linear-gradient(to bottom, var(--light), var(--secondary));
+}
+.program-detail.section-4 {
+  background: linear-gradient(to bottom, var(--secondary), var(--light));
+}
+
 .program-detail {
   padding: 60px 10%;
 }
 
-/* Alur Timeline */
+/* ==================== ALUR TIMELINE ==================== */
 .alur-timeline {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 .alur-timeline h3 {
   text-align: center;
@@ -35,6 +49,15 @@
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(10,25,49,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(10,25,49,0.2);
 }
 .timeline-item .circle {
   min-width: 40px;
@@ -57,7 +80,7 @@
   line-height: 1.6;
 }
 
-/* Cards program detail */
+/* ==================== CARDS PROGRAM DETAIL ==================== */
 .program-detail .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -95,15 +118,14 @@
   line-height: 1.6;
 }
 
-/* Galeri program */
+/* ==================== GALERI PROGRAM ==================== */
 .program-detail .galeri {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 .program-detail .galeri h3 {
-  margin-bottom: 20px;
-  color: var(--secondary);
   text-align: center;
+  color: var(--secondary);
+  margin-bottom: 30px;
 }
 .program-detail .galeri h4 {
   margin: 15px 0 10px 0;
@@ -117,7 +139,7 @@
 }
 .program-detail .galeri .cards .card img {
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -126,7 +148,7 @@
   transform: scale(1.05);
 }
 
-/* Tombol formulir */
+/* ==================== TOMBOL FORMULIR ==================== */
 .btn-primary {
   display: inline-block;
   background: linear-gradient(135deg, var(--secondary), var(--accent));
@@ -143,7 +165,7 @@
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* WhatsApp Floating Button */
+/* ==================== WHATSAPP FLOATING ==================== */
 .whatsapp-chat {
   position: fixed;
   bottom: 25px;
@@ -176,15 +198,12 @@
     padding: 20px 15px;
   }
   .program-detail .galeri .cards .card img {
-    height: 180px;
+    height: auto;
   }
 }
 @media (max-width: 480px) {
   .program-detail .cards .card {
     padding: 15px 12px;
-  }
-  .program-detail .galeri .cards .card img {
-    height: 150px;
   }
   .btn-primary {
     width: 100%;
