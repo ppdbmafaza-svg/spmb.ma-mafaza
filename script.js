@@ -81,3 +81,25 @@ if(toggle && navLinks){
     navLinks.classList.toggle("active");
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".program .card");
+
+  const observerOptions = {
+    root: null, // viewport
+    rootMargin: "0px",
+    threshold: 0.2 // 20% card terlihat
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show"); // tambahkan class .show
+        observer.unobserve(entry.target);   // cukup sekali saja
+      }
+    });
+  }, observerOptions);
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+});
