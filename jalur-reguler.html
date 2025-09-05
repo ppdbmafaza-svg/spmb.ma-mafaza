@@ -3,50 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Program MA Mafaza</title>
+  <title>Jalur Reguler - MA MAFAZA</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="program-detail.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
+  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">MA MAFAZA</div>
-    <nav>
-      <a href="index.html">Beranda</a>
+    <div class="logo"><a href="index.html">MA MAFAZA</a></div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="index.html#beranda">Beranda</a>
+      <a href="index.html#program">Program</a>
       <a href="index.html#admisi">Admisi</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="index.html#kontak">Kontak</a>
     </nav>
   </header>
 
+  <!-- Banner -->
   <section class="banner">
-    <!-- Bisa pasang banner umum untuk semua program -->
+    <!-- Banner umum bisa dipasang di sini -->
   </section>
 
-  <section class="program-detail">
-    <h2 id="judul-program">Judul Program</h2>
-    <p id="deskripsi-program">Deskripsi program di sini...</p>
-    
-    <div class="cards">
-      <div class="card">
-        <h3>Syarat</h3>
-        <ul id="syarat-program">
-          <li>Item syarat 1</li>
-          <li>Item syarat 2</li>
-        </ul>
+  <!-- Detail Program -->
+  <div class="program-detail-page">
+
+    <section class="program-detail">
+      <h2>Jalur Reguler</h2>
+      <p>
+        Jalur umum bagi semua calon siswa tanpa syarat khusus selain dokumen standar. 
+        Biaya sekolah sesuai ketentuan MA MAFAZA.
+      </p>
+    </section>
+
+    <!-- Alur Pendaftaran -->
+    <section class="alur-timeline">
+      <h3>Alur Pendaftaran Jalur Reguler</h3>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="circle">1</div>
+          <div class="content">
+            <h4>Syarat Pendaftaran</h4>
+            <ul>
+              <li>Fotokopi akta kelahiran</li>
+              <li>Fotokopi Kartu Keluarga (KK)</li>
+              <li>Fotokopi rapor terakhir</li>
+              <li>Pas foto terbaru ukuran 3x4 (2 lembar)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="circle">2</div>
+          <div class="content">
+            <h4>Prosedur & Tahapan</h4>
+            <ol>
+              <li>Isi formulir pendaftaran online melalui tombol di bawah</li>
+              <li>Unggah dokumen persyaratan sesuai daftar</li>
+              <li>Seleksi administrasi oleh panitia</li>
+              <li>Wawancara singkat (jika diperlukan)</li>
+              <li>Pengumuman hasil pendaftaran melalui website & WhatsApp</li>
+              <li>Registrasi dan orientasi siswa baru</li>
+            </ol>
+          </div>
+        </div>
+
       </div>
-      <div class="card">
-        <h3>Prosedur</h3>
-        <ul id="prosedur-program">
-          <li>Langkah 1</li>
-          <li>Langkah 2</li>
-        </ul>
+    </section>
+
+    <!-- Galeri Horizontal -->
+    <section class="galeri">
+      <h3>Galeri Kegiatan & Prestasi</h3>
+      <div class="cards">
+        <div class="card"><img src="kegiatan-siswa(1).jpg" alt="Kegiatan 1"></div>
+        <div class="card"><img src="kegiatan-siswa(2).jpg" alt="Kegiatan 2"></div>
+        <div class="card"><img src="prestasi(1).jpg" alt="Prestasi 1"></div>
+        <div class="card"><img src="prestasi(2).jpg" alt="Prestasi 2"></div>
+        <div class="card"><img src="bukti-nyata(1).jpg" alt="Bukti Lulusan 1"></div>
       </div>
+    </section>
+
+        <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-img" src="" alt="">
     </div>
+    
+    <!-- Tombol Formulir -->
+    <section class="btn-primary-section">
+      <a href="https://forms.gle/JKSrw5qcvCTwVjEs5" class="btn-primary" target="_blank">Isi Formulir Pendaftaran</a>
+    </section>
 
-    <a href="https://forms.gle/JKSrw5qcvCTwVjEs5" class="btn-primary" target="_self">Isi Formulir</a>
-  </section>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281259087731" class="whatsapp-chat" target="_blank">
+      <img src="wa-icon.png" alt="Chat WA">
+    </a>
 
-  <footer>
-    <p>📞 0812-3456-7890 | ✉️ spmb@ma-mafaza.sch.id | 📍 Jl. Pendidikan No.123, Yogyakarta</p>
+  </div>
+
+  <!-- Footer -->
+  <footer id="kontak">
+    <h2>Kontak Panitia</h2>
+    <p>Nomer HP: Ustadzah Adel (+6281259087731) & Ustadz Lukman (+6281234567890)</p>
+    <p>Email: ppdbmafaza@gmail.com</p>
+    <p>Lokasi: Jl. Wonosari No. 4, Pringgolayan, Banguntapan, Bantul, Yogyakarta</p>
+    <small>&copy; 2025 MA MAFAZA. All rights reserved.</small>
   </footer>
 
 </body>
