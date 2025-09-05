@@ -89,6 +89,11 @@ h2 {
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 20px;
+  z-index: 0;
+}
+.banner .container {
+  position: relative;
+  z-index: 2;
 }
 .banner-btn .btn-primary {
   background: linear-gradient(135deg, var(--secondary), var(--accent));
@@ -102,6 +107,22 @@ h2 {
 .banner-btn .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* ==================== BUBBLE ==================== */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(74, 127, 167, 0.3);
+  border-radius: 50%;
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
 }
 
 /* ==================== BUTTON UMUM ==================== */
@@ -142,270 +163,60 @@ h2 {
 }
 
 /* Animasi masuk scroll */
-.card.animate {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-.card.animate.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+.card.animate { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+.card.animate.show { opacity: 1; transform: translateY(0); }
 
 /* ==================== WHY MAFAZA ==================== */
-.why-mafaza {
-  background: linear-gradient(to bottom, var(--light), var(--soft));
-}
-.why-mafaza .card {
-  border-top: 6px solid var(--accent);
-  box-shadow: 0 4px 12px rgba(10,25,49,0.15);
-}
-.why-mafaza .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(10,25,49,0.25);
-}
-.why-mafaza .card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: var(--secondary);
-}
-.why-mafaza .card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--primary);
-}
+.why-mafaza { background: linear-gradient(to bottom, var(--light), var(--soft)); }
+.why-mafaza .card { border-top: 6px solid var(--accent); box-shadow: 0 4px 12px rgba(10,25,49,0.15); }
+.why-mafaza .card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(10,25,49,0.25); }
+.why-mafaza .card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--secondary); }
+.why-mafaza .card p { font-size: 0.95rem; line-height: 1.6; color: var(--primary); }
 
 /* ==================== PROGRAM ==================== */
-.program {
-  padding: 60px 10%;
-}
-.program:nth-child(odd) {
-  background: var(--soft);
-}
-.program:nth-child(even) {
-  background: var(--light);
-}
-.program .intro {
-  margin-bottom: 30px;
-  font-size: 1rem;
-  color: var(--primary);
-}
-.program .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-.program .card {
-  flex: 1 1 calc(33.33% - 20px);
-  max-width: calc(33.33% - 20px);
-  padding: 25px 20px;
-  border-radius: 14px;
-  background: white;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(10,25,49,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.program .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(10,25,49,0.2);
-}
-.program .card h3 {
-  color: var(--secondary);
-  margin-bottom: 15px;
-}
-.program .card .desc {
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-  color: #333;
-}
-.program .card ul,
-.program .card ol {
-  margin-top: 10px;
-  padding-left: 20px;
-  line-height: 1.6;
-}
+.program { background: linear-gradient(to bottom, var(--soft), var(--light)); }
+.program .intro { margin-bottom: 30px; font-size: 1rem; color: var(--primary); }
+.program .card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+.program .card h3 { margin-bottom: 10px; color: var(--secondary); }
+.program .card .desc { margin-bottom: 15px; font-size: 0.95rem; color: #333; }
 
 /* ==================== ADMISI ==================== */
-.admisi {
-  background: linear-gradient(to bottom, var(--light), var(--soft));
-  padding: 60px 10%;
-}
-.admisi h2 {
-  font-size: 2rem;
-  color: var(--secondary);
-  margin-bottom: 40px;
-}
-.admisi .card {
-  border-top: 6px solid var(--accent);
-  box-shadow: 0 4px 12px rgba(10,25,49,0.15);
-  padding: 25px 20px;
-  text-align: center;
-}
-.admisi .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(10,25,49,0.25);
-}
-.admisi .card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  color: var(--secondary);
-}
-.admisi .card p {
-  font-size: 0.95rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-.btn-group {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-.btn-group .btn-wa {
-  flex: 1 1 auto;
-  text-align: center;
-  background: linear-gradient(135deg, var(--secondary), var(--accent));
-  color: white;
-  padding: 12px 24px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-.btn-group .btn-wa:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-}
+.admisi { background: linear-gradient(to bottom, var(--light), var(--soft)); }
+.admisi h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 40px; }
+.admisi .card { border-top: 6px solid var(--accent); box-shadow: 0 4px 12px rgba(10,25,49,0.15); padding: 25px 20px; text-align: center; }
+.admisi .card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(10,25,49,0.25); }
+.admisi .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--secondary); }
+.admisi .card p { font-size: 0.95rem; color: var(--primary); margin-bottom: 20px; }
+.btn-group { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+.btn-group .btn-wa { flex: 1 1 auto; text-align: center; background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; transition: transform 0.2s, box-shadow 0.3s; }
+.btn-group .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.25); }
 
 /* ==================== FAQ ==================== */
-.faq {
-  width: 100%;
-  background: linear-gradient(to top, var(--secondary), var(--soft));
-  padding: 60px 10%;
-  box-sizing: border-box;
-  text-align: left;
-}
-.faq h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: var(--secondary);
-}
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.faq details {
-  background: white;
-  border: 1px solid var(--soft);
-  border-radius: 10px;
-  padding: 15px 20px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.faq details:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-.faq summary {
-  font-weight: 600;
-  color: var(--primary);
-}
-.faq p {
-  margin-top: 10px;
-  color: #333;
-}
+.faq { width: 100%; background: linear-gradient(to top, var(--secondary), var(--soft)); padding: 60px 10%; text-align: left; }
+.faq h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--secondary); }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq details { background: white; border: 1px solid var(--soft); border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.3s ease; }
+.faq details:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+.faq summary { font-weight: 600; color: var(--primary); }
+.faq p { margin-top: 10px; color: #333; }
 
 /* ==================== FOOTER ==================== */
-footer {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+footer { background: var(--primary); color: white; text-align: center; padding: 20px; }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
-  .cards .card {
-    flex: 1 1 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
-  }
+  .cards .card { flex: 1 1 calc(33.33% - 20px); max-width: calc(33.33% - 20px); }
 }
 @media (max-width: 768px) {
-  .cards .card {
-    flex: 1 1 calc(50% - 15px);
-    max-width: calc(50% - 15px);
-  }
-  .navbar .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    background: var(--primary);
-    position: absolute;
-    top: 60px;
-    right: 10%;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  .navbar .nav-links.active {
-    display: flex;
-  }
-  .navbar .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--light);
-  }
+  .cards .card { flex: 1 1 calc(50% - 15px); max-width: calc(50% - 15px); }
+  .navbar .nav-links { display: none; flex-direction: column; gap: 15px; background: var(--primary); position: absolute; top: 60px; right: 10%; padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  .navbar .nav-links.active { display: flex; }
+  .navbar .menu-toggle { display: block; }
 }
 @media (max-width: 480px) {
-  section {
-    padding: 40px 5%;
-  }
-  .cards {
-    gap: 10px;
-    padding: 0 5px;
-  }
-  .cards .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-/* ==================== ANIMASI ==================== */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ==================== BUBBLE BANNER ==================== */
-.banner {
-  position: relative;
-  overflow: hidden;
-}
-.bubble {
-  position: absolute;
-  bottom: -50px;
-  background: rgba(74,127,167,0.3);
-  border-radius: 50%;
-  animation-name: rise;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-@keyframes rise {
-  0% { transform: translateY(0) scale(1); opacity: 0.6; }
-  50% { opacity: 0.8; }
-  100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
-}
-@media (max-width: 768px) {
+  section { padding: 40px 5%; }
+  .cards { gap: 10px; padding: 0 5px; }
+  .cards .card { flex: 1 1 100%; max-width: 100%; }
   .bubble { bottom: -30px; }
   @keyframes rise { 100% { transform: translateY(-500px) scale(1.2); } }
 }
