@@ -1,30 +1,20 @@
 :root {
-  --primary: #0A1931;      
-  --secondary: #1A3D63;    
-  --accent: #4A7FA7;       
-  --light-bg: #F6FAFD;     
-  --gradient-light: #B3CFE5;
-}
-
-/* ==================== BODY BASE ==================== */
-body {
-  background: var(--light-bg);
-  font-family: 'PlusJakartaSans', sans-serif;
-  color: var(--primary);
-  margin: 0;
-  padding: 0;
+  --primary: #0A1931;      /* warna utama teks/judul */
+  --secondary: #1A3D63;    /* warna highlight / circle timeline & judul card */
+  --accent: #4A7FA7;       /* warna aksen / tombol */
+  --light-bg: #F6FAFD;     /* background section terang */
+  --gradient-light: #B3CFE5; /* gradasi lembut */
 }
 
 /* ==================== PROGRAM DETAIL PAGE ==================== */
 .program-detail-page {
   width: 100%;
+  font-family: 'PlusJakartaSans', sans-serif;
   color: var(--primary);
 }
 
 /* ==================== GRADASI SECTION ==================== */
-.program-detail:first-of-type,
-.galeri,
-.btn-primary-section {
+.program-detail:first-of-type {
   background: linear-gradient(to bottom, var(--light-bg) 0%, var(--gradient-light) 50%, var(--light-bg) 100%);
   padding: 60px 10%;
   border-radius: 14px;
@@ -32,7 +22,7 @@ body {
 
 /* ==================== ALUR TIMELINE ==================== */
 .alur-timeline {
-  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 100%);
+  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 50%, var(--gradient-light) 100%);
   padding: 40px 10%;
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
@@ -84,7 +74,13 @@ body {
   color: var(--primary);
 }
 
-/* ==================== GALERI PREMIUM ==================== */
+/* ==================== GALERI ==================== */
+.galeri {
+  background: linear-gradient(to bottom, var(--light-bg) 0%, var(--gradient-light) 50%, var(--light-bg) 100%);
+  margin: 40px 0;
+  padding: 40px 10%;
+  border-radius: 14px;
+}
 .galeri h3 {
   text-align: center;
   color: var(--secondary);
@@ -97,28 +93,23 @@ body {
 .galeri .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 15px;
   justify-items: center;
   width: 100%;
 }
 .galeri .cards .card {
   width: 100%;
-  max-width: 300px;
+  max-width: 300px;       /* compact card */
   padding: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.galeri .cards .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  background: none;
+  box-shadow: none;
 }
 .galeri .cards .card img {
   width: 100%;
-  max-height: 200px;
-  object-fit: contain;
+  max-height: 200px;       /* batasi tinggi gambar */
+  object-fit: contain;     /* tampil asli, proporsional */
   transition: transform 0.3s ease;
 }
 .galeri .cards .card img:hover {
@@ -127,15 +118,22 @@ body {
 .galeri .cards .card h4 {
   margin: 10px 15px 5px 15px;
   color: var(--secondary);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 .galeri .cards .card p {
   margin: 0 15px 15px 15px;
   color: var(--primary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 /* ==================== TOMBOL FORMULIR ==================== */
+.btn-primary-section {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 50%, var(--gradient-light) 100%);
+  padding: 40px 0;
+  border-radius: 14px;
+}
 .btn-primary {
   display: inline-block;
   background: linear-gradient(135deg, var(--secondary), var(--accent));
@@ -192,5 +190,6 @@ body {
   .galeri .cards .card img {
     height: auto;
     object-fit: contain;
+    max-height: 180px;  /* lebih compact untuk HP */
   }
 }
