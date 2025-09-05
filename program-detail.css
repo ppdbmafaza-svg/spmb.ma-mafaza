@@ -218,20 +218,6 @@ footer {
   padding: 20px;
 }
 
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 1024px) { 
-  .timeline-item { flex-direction: column; gap: 15px; }
-  .galeri .cards .card { width: 300px; }
-}
-@media (max-width: 768px) { 
-  section { padding: 40px 5%; }
-  .galeri .cards { gap: 10px; }
-  .galeri .cards .card { width: 80%; }
-  .btn-primary-section .btn-primary { width: 100%; padding: 12px 20px; }
-}
-@media (max-width: 480px) { 
-  .galeri .cards .card { width: 90%; }
-}
 /* ==================== CARD DI HALAMAN PROGRAM DETAIL ==================== */
 .program-detail-page .card {
   background: white;
@@ -255,4 +241,35 @@ footer {
 .program-detail-page .card ul,
 .program-detail-page .card ol {
   margin-left: 20px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) { 
+  .timeline-item { flex-direction: column; gap: 15px; }
+  .galeri .cards .card { width: 300px; }
+}
+@media (max-width: 768px) { 
+  section { padding: 40px 5%; }
+  .galeri .cards { gap: 10px; }
+  .galeri .cards .card { width: 80%; }
+  .btn-primary-section .btn-primary { width: 100%; padding: 12px 20px; }
+
+  /* HAMBURGER FIX MOBILE */
+  .navbar .nav-links { 
+    display: none; 
+    flex-direction: column; 
+    gap: 15px; 
+    background: var(--primary);
+    position: absolute; 
+    top: 60px; 
+    right: 10%; 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .navbar .nav-links.active { display: flex; }
+  .navbar .menu-toggle { display: block; }
+}
+@media (max-width: 480px) { 
+  .galeri .cards .card { width: 90%; }
 }
