@@ -99,17 +99,17 @@
 }
 .galeri .cards .card {
   width: 100%;
-  max-width: 350px;
+  max-width: none;        /* biar layout sama versi lama */
   padding: 0;
   border-radius: 10px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
+  background: none;       /* card transparan seperti versi lama */
+  box-shadow: none;       /* biar nggak ada efek shadow */
 }
 .galeri .cards .card img {
   width: 100%;
-  height: auto;          /* tampil asli, proporsional */
-  object-fit: cover;      /* penuh di card */
+  height: auto;           /* proporsional */
+  object-fit: contain;    /* tampil asli, tidak dipotong */
   transition: transform 0.3s ease;
 }
 .galeri .cards .card img:hover {
@@ -188,7 +188,7 @@
     max-width: 100%;
   }
   .galeri .cards .card img {
-    height: auto;      /* tetap proporsional */
-    object-fit: cover;  /* penuh di card */
+    height: auto;
+    object-fit: contain;
   }
 }
