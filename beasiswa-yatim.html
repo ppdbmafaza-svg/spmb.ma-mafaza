@@ -12,7 +12,7 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo"><a href="index.html#beranda">MA MAFAZA</a></div>
+    <div class="logo"><a href="index.html">MA MAFAZA</a></div>
     <div class="menu-toggle">&#9776;</div>
     <nav class="nav-links">
       <a href="index.html#beranda">Beranda</a>
@@ -23,61 +23,50 @@
     </nav>
   </header>
 
+  <!-- Banner -->
+  <section class="banner">
+    <!-- Bisa pasang banner khusus atau umum -->
+  </section>
+
   <!-- Detail Program -->
-  <div class="program-detail-page">
+  <section class="program-detail">
+    <h2>Beasiswa Yatim & Dhuafa</h2>
+    <p>
+      Program ini ditujukan bagi calon siswa yatim/piatu dan keluarga dhuafa yang ingin melanjutkan pendidikan di MA MAFAZA.
+      Beasiswa mencakup pembebasan biaya pendaftaran, biaya sekolah, serta dukungan fasilitas belajar.
+    </p>
 
-    <section class="program-detail">
-      <h2>Beasiswa Yatim & Dhuafa</h2>
-      <p>
-        Program ini ditujukan bagi calon siswa yatim/piatu dan keluarga dhuafa yang ingin melanjutkan pendidikan di MA MAFAZA.
-        Beasiswa mencakup pembebasan biaya pendaftaran, biaya sekolah, serta dukungan fasilitas belajar.
-      </p>
-    </section>
-
-    <!-- Alur Pendaftaran -->
-    <section class="alur-timeline">
-      <h3>Alur Pendaftaran Beasiswa</h3>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="circle">1</div>
-          <div class="content">
-            <h4>Syarat Pendaftaran</h4>
-            <ul>
-              <li>Fotokopi akta kelahiran</li>
-              <li>Fotokopi Kartu Keluarga (KK)</li>
-              <li>Fotokopi rapor terakhir</li>
-              <li>Surat keterangan yatim/piatu atau keluarga dhuafa dari kelurahan</li>
-              <li>Pas foto terbaru ukuran 3x4 (2 lembar)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="circle">2</div>
-          <div class="content">
-            <h4>Prosedur & Tahapan</h4>
-            <ol>
-              <li>Isi formulir pendaftaran online melalui tombol di bawah</li>
-              <li>Unggah dokumen persyaratan sesuai daftar</li>
-              <li>Ikuti seleksi administrasi oleh panitia</li>
-              <li>Wawancara dan observasi singkat untuk memastikan kelayakan beasiswa</li>
-              <li>Pengumuman hasil beasiswa melalui website & WhatsApp</li>
-              <li>Registrasi dan orientasi siswa baru bagi yang lolos</li>
-            </ol>
-          </div>
-        </div>
-
+    <div class="cards">
+      <div class="card">
+        <h3>Syarat Pendaftaran</h3>
+        <ul>
+          <li>Fotokopi akta kelahiran</li>
+          <li>Fotokopi Kartu Keluarga (KK)</li>
+          <li>Fotokopi rapor terakhir</li>
+          <li>Surat keterangan yatim/piatu atau keluarga dhuafa dari kelurahan</li>
+          <li>Pas foto terbaru ukuran 3x4 (2 lembar)</li>
+        </ul>
       </div>
-    </section>
+      <div class="card">
+        <h3>Prosedur & Tahapan</h3>
+        <ol>
+          <li>Isi formulir pendaftaran online melalui tombol di bawah</li>
+          <li>Unggah dokumen persyaratan sesuai daftar</li>
+          <li>Ikuti seleksi administrasi oleh panitia</li>
+          <li>Wawancara dan observasi singkat untuk memastikan kelayakan beasiswa</li>
+          <li>Pengumuman hasil beasiswa melalui website & WhatsApp</li>
+          <li>Registrasi dan orientasi siswa baru bagi yang lolos</li>
+        </ol>
+      </div>
+    </div>
 
     <!-- Galeri Horizontal -->
     <section class="galeri">
       <h3>Galeri Kegiatan & Prestasi</h3>
-      <div class="cards" id="autoScrollGaleri">
+      <div class="cards" id="galeri-yatim">
         <div class="card"><img src="prestasi(1).jpg" alt="Prestasi 1"></div>
         <div class="card"><img src="prestasi(2).jpg" alt="Prestasi 2"></div>
-        <div class="card"><img src="/kegiatan-siswa(1).jpg" alt="Kegiatan 1"></div>
+        <div class="card"><img src="kegiatan-siswa(1).jpg" alt="Kegiatan 1"></div>
         <div class="card"><img src="kegiatan-siswa(2).jpg" alt="Kegiatan 2"></div>
         <div class="card"><img src="bukti-nyata(1).jpg" alt="Bukti Lulusan 1"></div>
         <div class="card"><img src="bukti-nyata(2).jpg" alt="Bukti Lulusan 2"></div>
@@ -88,23 +77,20 @@
       </div>
     </section>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-img" src="" alt="">
+    </div>
+
     <!-- Tombol Formulir -->
-    <section class="btn-primary-section">
-      <a href="https://forms.gle/NHRE8w1vz3H46zdw8" class="btn-primary" target="_blank">Isi Formulir Pendaftaran</a>
-    </section>
+    <a href="https://forms.gle/NHRE8w1vz3H46zdw8" class="btn-primary" target="_blank">Isi Formulir Pendaftaran</a>
+  </section>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/6281259087731" class="whatsapp-chat" target="_blank">
-      <img src="wa-icon.png" alt="Chat WA">
-    </a>
-
-  </div>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="">
-  </div>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/6281259087731" class="whatsapp-chat" target="_blank">
+    <img src="wa-icon.png" alt="Chat WA">
+  </a>
 
   <!-- Footer -->
   <footer id="kontak">
