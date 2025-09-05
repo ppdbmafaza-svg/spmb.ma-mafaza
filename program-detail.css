@@ -232,3 +232,27 @@ footer {
 @media (max-width: 480px) { 
   .galeri .cards .card { width: 90%; }
 }
+/* ==================== CARD DI HALAMAN PROGRAM DETAIL ==================== */
+.program-detail-page .card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
+  margin: 15px auto;
+  max-width: 700px;
+  text-align: left;
+}
+.program-detail-page .card h3 {
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+.program-detail-page .card p,
+.program-detail-page .card ul,
+.program-detail-page .card ol {
+  color: var(--primary);
+  line-height: 1.6;
+}
+.program-detail-page .card ul,
+.program-detail-page .card ol {
+  margin-left: 20px;
+}
