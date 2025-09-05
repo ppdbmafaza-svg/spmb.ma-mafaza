@@ -1,27 +1,28 @@
 /* ==================== PROGRAM DETAIL ==================== */
 
-/* Section program selang-seling */
-.program-detail:nth-child(odd) {
-  background: var(--soft); /* lembut */
+/* Section program selang-seling dengan class spesifik */
+.program-detail:nth-of-type(odd) {
+  background: var(--soft);
 }
-.program-detail:nth-child(even) {
+.program-detail:nth-of-type(even) {
   background: var(--light);
 }
 .program-detail {
   padding: 60px 10%;
+  text-align: center;
 }
 
 /* Cards program detail */
 .program-detail .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* jarak antar card */
+  gap: 20px;
   justify-content: center;
   margin-bottom: 40px;
 }
 .program-detail .cards .card {
-  flex: 1 1 calc(33.33% - 20px);
-  max-width: calc(33.33% - 20px);
+  flex: 1 1 280px; /* lebih fleksibel */
+  max-width: 33%;
   padding: 25px 20px;
   border-radius: 14px;
   background: white;
@@ -48,16 +49,37 @@
 /* Galeri program */
 .program-detail .galeri {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px 0;
+}
+.program-detail .galeri h3 {
+  margin-bottom: 20px;
+  color: var(--secondary);
+}
+.program-detail .galeri .cards {
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
   justify-content: center;
 }
-.program-detail .galeri .cards .card img {
+.program-detail .galeri img {
   width: 100%;
+  max-height: 200px;
   border-radius: 10px;
   object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.program-detail .galeri img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Tombol Formulir */
+.program-detail > .btn-primary {
+  margin-top: 30px;
+  display: inline-block;
+  text-decoration: none;
 }
 
 /* Responsive */
@@ -72,5 +94,13 @@
     flex: 1 1 100%;
     max-width: 100%;
     padding: 20px 15px;
+    text-align: center;
+  }
+  .program-detail { padding: 50px 5%; }
+}
+@media (max-width: 480px) {
+  .program-detail .galeri .cards {
+    flex-direction: column;
+    gap: 15px;
   }
 }
