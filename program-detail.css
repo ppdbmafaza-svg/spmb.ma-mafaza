@@ -1,9 +1,9 @@
 :root {
-  --primary: #0A1931;      /* warna utama teks/judul */
-  --secondary: #1A3D63;    /* warna highlight / circle timeline & judul card */
-  --accent: #4A7FA7;       /* warna aksen / tombol */
-  --light-bg: #F6FAFD;     /* background section terang */
-  --gradient-light: #B3CFE5; /* gradasi lembut */
+  --primary: #0A1931;
+  --secondary: #1A3D63;
+  --accent: #4A7FA7;
+  --light-bg: #F6FAFD;
+  --gradient-light: #B3CFE5;
 }
 
 /* ==================== PROGRAM DETAIL PAGE ==================== */
@@ -13,20 +13,43 @@
   color: var(--primary);
 }
 
-/* ==================== GRADASI SECTION ==================== */
-.program-detail:first-of-type {
-  background: linear-gradient(to bottom, var(--light-bg) 0%, var(--gradient-light) 50%, var(--light-bg) 100%);
-  padding: 60px 10%;
+/* ==================== SEAMLESS GRADIENT SECTIONS ==================== */
+.program-detail,
+.alur-timeline,
+.galeri,
+.btn-primary-section {
   border-radius: 14px;
+  padding: 40px 10%;
+  position: relative;
+  overflow: hidden;
+  background: var(--light-bg);
+}
+
+.program-detail::after,
+.alur-timeline::after,
+.galeri::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, var(--light-bg) 0%, var(--gradient-light) 100%);
+}
+
+.alur-timeline::after {
+  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 100%);
+}
+
+.galeri::after {
+  background: linear-gradient(to bottom, var(--light-bg) 0%, var(--gradient-light) 100%);
 }
 
 /* ==================== ALUR TIMELINE ==================== */
 .alur-timeline {
-  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 50%, var(--gradient-light) 100%);
-  padding: 40px 10%;
-  border-radius: 14px;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-  margin: 40px 0;
+  margin: 0 0 40px 0;
 }
 .alur-timeline h3 {
   text-align: center;
@@ -75,12 +98,6 @@
 }
 
 /* ==================== GALERI ==================== */
-.galeri {
-  background: linear-gradient(to bottom, var(--light-bg) 0%, var(--gradient-light) 50%, var(--light-bg) 100%);
-  margin: 40px 0;
-  padding: 40px 10%;
-  border-radius: 14px;
-}
 .galeri h3 {
   text-align: center;
   color: var(--secondary);
@@ -92,14 +109,14 @@
 }
 .galeri .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   justify-items: center;
   width: 100%;
 }
 .galeri .cards .card {
   width: 100%;
-  max-width: 300px;       /* compact card */
+  max-width: 300px;
   padding: 0;
   border-radius: 10px;
   overflow: hidden;
@@ -108,31 +125,19 @@
 }
 .galeri .cards .card img {
   width: 100%;
-  max-height: 200px;       /* batasi tinggi gambar */
-  object-fit: contain;     /* tampil asli, proporsional */
+  max-height: 180px;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 .galeri .cards .card img:hover {
   transform: scale(1.05);
-}
-.galeri .cards .card h4 {
-  margin: 10px 15px 5px 15px;
-  color: var(--secondary);
-  font-size: 1.1rem;
-}
-.galeri .cards .card p {
-  margin: 0 15px 15px 15px;
-  color: var(--primary);
-  font-size: 0.95rem;
 }
 
 /* ==================== TOMBOL FORMULIR ==================== */
 .btn-primary-section {
   display: flex;
   justify-content: center;
-  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 50%, var(--gradient-light) 100%);
-  padding: 40px 0;
-  border-radius: 14px;
+  margin-bottom: 40px;
 }
 .btn-primary {
   display: inline-block;
@@ -172,11 +177,11 @@
   }
 }
 @media (max-width: 768px) {
-  .program-detail {
+  .program-detail,
+  .alur-timeline,
+  .galeri,
+  .btn-primary-section {
     padding: 40px 5%;
-  }
-  .galeri .cards {
-    gap: 15px;
   }
 }
 @media (max-width: 480px) {
@@ -184,12 +189,7 @@
     width: 100%;
     padding: 12px 20px;
   }
-  .galeri .cards .card {
-    max-width: 100%;
-  }
   .galeri .cards .card img {
-    height: auto;
-    object-fit: contain;
-    max-height: 180px;  /* lebih compact untuk HP */
+    max-height: 150px;
   }
 }
