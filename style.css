@@ -175,9 +175,62 @@ h2 {
   color: var(--primary);
 }
 
+/* ==================== PROGRAM ==================== */
+.program {
+  padding: 60px 10%;
+}
+.program:nth-child(odd) {
+  background: var(--soft);
+}
+.program:nth-child(even) {
+  background: var(--light);
+}
+.program .intro {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: var(--primary);
+}
+.program .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.program .card {
+  flex: 1 1 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
+  padding: 25px 20px;
+  border-radius: 14px;
+  background: white;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(10,25,49,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.program .card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(10,25,49,0.2);
+}
+.program .card h3 {
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+.program .card .desc {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #333;
+}
+.program .card ul,
+.program .card ol {
+  margin-top: 10px;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
 /* ==================== ADMISI ==================== */
 .admisi {
   background: linear-gradient(to bottom, var(--light), var(--soft));
+  padding: 60px 10%;
 }
 .admisi h2 {
   font-size: 2rem;
@@ -321,4 +374,38 @@ footer {
     flex: 1 1 100%;
     max-width: 100%;
   }
+}
+
+/* ==================== ANIMASI ==================== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== BUBBLE BANNER ==================== */
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(74,127,167,0.3);
+  border-radius: 50%;
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
+}
+@media (max-width: 768px) {
+  .bubble { bottom: -30px; }
+  @keyframes rise { 100% { transform: translateY(-500px) scale(1.2); } }
 }
