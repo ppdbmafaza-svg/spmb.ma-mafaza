@@ -1,42 +1,62 @@
-// Hamburger menu toggle
-    const toggle=document.querySelector(".menu-toggle");
-    const navLinks=document.querySelector(".nav-links");
-    if(toggle && navLinks){ toggle.addEventListener("click",()=>{ navLinks.classList.toggle("active"); }); }
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Timeline interaktif
-    document.querySelectorAll(".timeline-item").forEach(item=>{
-      item.addEventListener("click",()=>{ 
-        document.querySelectorAll(".timeline-item").forEach(i=>i.classList.remove("active"));
-        item.classList.add("active");
-      });
+  // Hamburger menu toggle
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  if(toggle && navLinks){
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
+  }
 
-    // Galeri infinite scroll
-    const galeriWrapper = document.querySelector(".galeri .cards-wrapper");
-    const galeri = document.querySelector(".galeri .cards");
+  // Timeline interaktif (jika ada step)
+  const steps = document.querySelectorAll(".step");
+  steps.forEach(step => {
+    step.addEventListener("click", () => {
+      steps.forEach(s => s.classList.remove("active"));
+      step.classList.add("active");
+    });
+  });
+
+  // Lightbox untuk galeri
+  const galleryCards = document.querySelectorAll(".galeri .card img");
+  const lightbox = document.createElement("div");
+  lightbox.classList.add("lightbox");
+  lightbox.innerHTML = `<span class="close">&times;</span><img class="lightbox-img" src="">`;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector(".lightbox-img");
+  const closeBtn = lightbox.querySelector(".close");
+
+  galleryCards.forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if(e.target === lightbox) lightbox.style.display = "none";
+  });
+
+  // Galeri otomatis scroll
+  const galeriCards = document.querySelector(".galeri .cards");
+  if(galeriCards){
     let scrollAmount = 0;
-    function scrollGaleri() {
-      scrollAmount += 1;
-      if(scrollAmount >= galeri.scrollWidth / 2) scrollAmount = 0;
-      galeriWrapper.scrollLeft = scrollAmount;
-      requestAnimationFrame(scrollGaleri);
+    const scrollStep = 2; // pixel per frame
+    function autoScroll(){
+      scrollAmount += scrollStep;
+      if(scrollAmount >= galeriCards.scrollWidth - galeriCards.clientWidth){
+        scrollAmount = 0; // balik ke awal
+      }
+      galeriCards.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      requestAnimationFrame(autoScroll);
     }
-    if(galeriWrapper && galeri){ requestAnimationFrame(scrollGaleri); }
+    autoScroll();
+  }
 
-    // Lightbox
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.querySelector(".lightbox-img");
-    const closeBtn = document.querySelector(".lightbox .close");
-    document.querySelectorAll(".galeri .card img").forEach(img=>{
-      img.addEventListener("click",()=>{
-        lightbox.style.display="flex";
-        lightboxImg.src=img.src;
-        lightboxImg.alt=img.alt;
-      });
-    });
-    closeBtn.addEventListener("click",()=>{ lightbox.style.display="none"; });
-    lightbox.addEventListener("click",(e)=>{ if(e.target===lightbox) lightbox.style.display="none"; });
-  </script>
-
-</body>
-</html>
+});
