@@ -142,3 +142,90 @@
     padding: 12px 20px;
   }
 }
+/* Timeline Syarat & Prosedur */
+.alur-timeline {
+  margin: 50px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+.alur-timeline h3 {
+  color: var(--secondary);
+  margin-bottom: 30px;
+}
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  width: 420px;
+  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(10,25,49,0.15);
+}
+.timeline-item .circle {
+  width: 50px;
+  height: 50px;
+  background: var(--secondary);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.timeline-item .content {
+  text-align: left;
+  width: 100%;
+}
+.timeline-item .content h4 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.timeline-item .content ul,
+.timeline-item .content ol {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+/* Galeri cards tetap seperti sebelumnya */
+.program-detail .galeri .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+.program-detail .galeri .cards .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.program-detail .galeri .cards .card img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Timeline */
+@media (max-width: 900px) {
+  .timeline {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .timeline-item {
+    width: 100%;
+    max-width: 450px;
+  }
+}
