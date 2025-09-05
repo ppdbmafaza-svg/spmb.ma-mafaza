@@ -17,8 +17,8 @@
   --primary: #0a1931;
   --secondary: #1a3d63;
   --accent: #4a7fa7;
-  --light: #f6fafd;
   --soft: #b3cfe5;
+  --light: #f6fafd;
 }
 
 /* ==================== GLOBAL ==================== */
@@ -47,42 +47,42 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(10, 25, 49, 0.85);
-  backdrop-filter: blur(6px);
-  color: white;
-  padding: 15px 50px;
+  background: var(--primary);
+  padding: 15px 10%;
   position: sticky;
   top: 0;
-  z-index: 10;
-  transition: background 0.3s;
+  z-index: 1000;
 }
-.navbar a {
-  color: white;
-  margin-left: 20px;
+.navbar .logo a {
+  color: var(--light);
+  font-size: 1.5rem;
+  font-weight: bold;
   text-decoration: none;
+}
+.navbar .nav-links {
+  display: flex;
+  gap: 25px;
+}
+.navbar .nav-links a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 1rem;
   transition: color 0.3s;
 }
-.navbar a:hover {
+.navbar .nav-links a:hover {
   color: var(--soft);
 }
 
 /* ==================== BANNER ==================== */
-/* Banner dengan flyer utuh */
 .banner {
   background: url('banner.PNG') no-repeat center center/cover;
-  height: 80vh;               /* ukuran awal kamu */
+  height: 80vh;
   width: 100%;
-  position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;      /* tombol tetap di bawah */
+  align-items: flex-end;
   padding-bottom: 20px;
 }
-
-.banner::after {
-  content: none;              /* hilangkan overlay gelap */
-}
-
 .banner-btn .btn-primary {
   background: linear-gradient(135deg, var(--secondary), var(--accent));
   color: white;
@@ -92,7 +92,6 @@ h2 {
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.3s;
 }
-
 .banner-btn .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
@@ -111,58 +110,168 @@ h2 {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* ==================== CARDS ==================== */
+/* ==================== CARDS UMUM ==================== */
 .cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 auto;
 }
-.card {
-  background: var(--soft);
+.cards .card {
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  padding: 25px 20px;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--light);
+}
+
+/* ==================== WHY MAFAZA ==================== */
+.why-mafaza {
+  background: linear-gradient(to bottom, var(--light), var(--soft));
+}
+.why-mafaza .card {
+  border-top: 6px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(10, 25, 49, 0.15);
+}
+.why-mafaza .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(10, 25, 49, 0.25);
+}
+.why-mafaza .card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--secondary);
+}
+.why-mafaza .card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--primary);
+}
+
+/* ==================== PROGRAM ==================== */
+.program {
+  background: linear-gradient(to bottom, var(--soft), var(--light));
+}
+.program .intro {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: var(--primary);
+}
+.program .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
   padding: 20px;
   border-radius: 12px;
-  flex: 1 1 250px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.program .card h3 {
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+.program .card .desc {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #333;
 }
 
-/* ==================== TABLE ==================== */
-table {
-  width: 100%;
-  border-collapse: collapse;
+/* ==================== ADMISI ==================== */
+.admisi {
+  background: linear-gradient(to bottom, var(--light), var(--soft));
+}
+.admisi h2 {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 40px;
+}
+.admisi .card {
+  border-top: 6px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(10, 25, 49, 0.15);
+  padding: 25px 20px;
+  text-align: center;
+}
+.admisi .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(10, 25, 49, 0.25);
+}
+.admisi .card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--secondary);
+}
+.admisi .card p {
+  font-size: 0.95rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
-th {
-  background: var(--secondary);
+.btn-group .btn-wa {
+  flex: 1 1 auto;
+  text-align: center;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
   color: white;
-  padding: 10px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
-td {
-  border: 1px solid var(--soft);
-  padding: 10px;
+.btn-group .btn-wa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 /* ==================== FAQ ==================== */
-details {
-  background: var(--soft);
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
+.faq {
+  width: 100%;
+  background: linear-gradient(to top, var(--secondary), var(--soft));
+  padding: 60px 10%;
+  box-sizing: border-box;
+  text-align: left;
 }
-details summary {
+.faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--secondary);
+}
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq details {
+  background: white;
+  border: 1px solid var(--soft);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
-details[open] summary {
-  color: var(--accent);
+.faq details:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
-
+.faq summary {
+  font-weight: 600;
+  color: var(--primary);
+}
+.faq p {
+  margin-top: 10px;
+  color: #333;
+}
 
 /* ==================== FOOTER ==================== */
 footer {
@@ -172,24 +281,56 @@ footer {
   padding: 20px;
 }
 
-/* ==================== TIMELINE ==================== */
-.timeline-steps {
-  display: flex;
-  justify-content: space-around;
-  margin: 30px 0;
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .cards .card {
+    flex: 1 1 calc(33.33% - 20px); /* 3 per baris tablet */
+    max-width: calc(33.33% - 20px);
+  }
 }
-.step {
-  position: relative;
-  padding: 10px 20px;
-  background: var(--soft);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+@media (max-width: 768px) {
+  .cards .card {
+    flex: 1 1 calc(50% - 15px); /* 2 per baris HP */
+    max-width: calc(50% - 15px);
+  }
 }
-.step.active {
-  background: var(--accent);
-  color: white;
-  font-weight: bold;
+@media (max-width: 480px) {
+  section {
+    padding: 40px 5%;
+  }
+  .cards {
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .cards .card {
+    flex: 1 1 100%; /* 1 per baris HP kecil */
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none; /* sembunyikan menu */
+    flex-direction: column;
+    gap: 15px;
+    background: var(--primary);
+    position: absolute;
+    top: 60px; /* di bawah navbar */
+    right: 10%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--light);
+  }
 }
 
 /* ==================== ANIMASI ==================== */
@@ -202,37 +343,70 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.program .intro {
-  margin-bottom: 30px;
-  font-size: 1rem;
-  color: var(--primary);
+/* Banner untuk bubble */
+.banner {
+  position: relative;
+  overflow: hidden;
 }
 
-.program .card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+/* Bubble */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(74, 127, 167, 0.3);
+  border-radius: 50%;
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-.program .card h3 {
-  margin-bottom: 10px;
-  color: var(--secondary);
+/* Animasi naik */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-800px) scale(1.5);
+    opacity: 0;
+  }
 }
 
-.program .card .desc {
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-  color: #333;
+/* Responsive untuk HP */
+@media (max-width: 768px) {
+  .bubble {
+    bottom: -30px;
+  }
+  @keyframes rise {
+    100% {
+      transform: translateY(-500px) scale(1.2);
+    }
+  }
 }
 
-.program .card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
+/* Cards interaktif */
+.cards .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.program .card ul li {
-  margin-bottom: 8px;
-  font-size: 0.9rem;
+/* Efek hover */
+.cards .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(10, 25, 49, 0.25);
+}
+
+/* Animasi masuk saat scroll */
+.card.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.card.animate.show {
+  opacity: 1;
+  transform: translateY(0);
 }
