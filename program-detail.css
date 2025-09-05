@@ -1,6 +1,8 @@
-/* ==================== PROGRAM DETAIL RESPONSIVE ==================== */
+/* ==================== PROGRAM DETAIL PAGE ==================== */
 .program-detail-page {
   width: 100%;
+  font-family: 'PlusJakartaSans', sans-serif;
+  color: #0A1931;
 }
 
 /* Section program selang-seling */
@@ -14,6 +16,47 @@
   padding: 60px 10%;
 }
 
+/* Alur Timeline */
+.alur-timeline {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.alur-timeline h3 {
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: 30px;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.timeline-item .circle {
+  min-width: 40px;
+  min-height: 40px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+.timeline-item .content h4 {
+  margin-bottom: 10px;
+}
+.timeline-item .content ul,
+.timeline-item .content ol {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
 /* Cards program detail */
 .program-detail .cards {
   display: grid;
@@ -22,7 +65,6 @@
   justify-items: center;
   margin-bottom: 40px;
 }
-
 .program-detail .cards .card {
   width: 100%;
   max-width: 350px;
@@ -37,17 +79,15 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-
 .program-detail .cards .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 8px 20px rgba(10,25,49,0.2);
 }
-
-.program-detail .cards .card h3 {
+.program-detail .cards .card h3,
+.program-detail .cards .card h4 {
   color: var(--secondary);
   margin-bottom: 15px;
 }
-
 .program-detail .cards .card ul,
 .program-detail .cards .card ol {
   margin-top: 10px;
@@ -64,6 +104,10 @@
   margin-bottom: 20px;
   color: var(--secondary);
   text-align: center;
+}
+.program-detail .galeri h4 {
+  margin: 15px 0 10px 0;
+  color: var(--accent);
 }
 .program-detail .galeri .cards {
   display: grid;
@@ -83,7 +127,7 @@
 }
 
 /* Tombol formulir */
-.btn-form {
+.btn-primary {
   display: inline-block;
   background: linear-gradient(135deg, var(--secondary), var(--accent));
   color: white;
@@ -94,7 +138,7 @@
   text-align: center;
   transition: transform 0.2s, box-shadow 0.3s;
 }
-.btn-form:hover {
+.btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
@@ -115,6 +159,12 @@
 }
 
 /* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .timeline-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 @media (max-width: 768px) {
   .program-detail {
     padding: 40px 5%;
@@ -129,7 +179,6 @@
     height: 180px;
   }
 }
-
 @media (max-width: 480px) {
   .program-detail .cards .card {
     padding: 15px 12px;
@@ -137,95 +186,8 @@
   .program-detail .galeri .cards .card img {
     height: 150px;
   }
-  .btn-form {
+  .btn-primary {
     width: 100%;
     padding: 12px 20px;
-  }
-}
-/* Timeline Syarat & Prosedur */
-.alur-timeline {
-  margin: 50px auto;
-  max-width: 1000px;
-  text-align: center;
-}
-.alur-timeline h3 {
-  color: var(--secondary);
-  margin-bottom: 30px;
-}
-.timeline {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-.timeline-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  border-radius: 14px;
-  padding: 20px;
-  width: 420px;
-  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.timeline-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(10,25,49,0.15);
-}
-.timeline-item .circle {
-  width: 50px;
-  height: 50px;
-  background: var(--secondary);
-  color: white;
-  font-weight: bold;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-.timeline-item .content {
-  text-align: left;
-  width: 100%;
-}
-.timeline-item .content h4 {
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.timeline-item .content ul,
-.timeline-item .content ol {
-  margin-left: 20px;
-  line-height: 1.6;
-}
-
-/* Galeri cards tetap seperti sebelumnya */
-.program-detail .galeri .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  justify-items: center;
-}
-.program-detail .galeri .cards .card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-.program-detail .galeri .cards .card img:hover {
-  transform: scale(1.05);
-}
-
-/* Responsive Timeline */
-@media (max-width: 900px) {
-  .timeline {
-    flex-direction: column;
-    gap: 25px;
-  }
-  .timeline-item {
-    width: 100%;
-    max-width: 450px;
   }
 }
