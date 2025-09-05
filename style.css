@@ -243,4 +243,50 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
   height: 100%;
   object-fit: cover;
 }
+/* Program Detail Cards */
+.program-detail .cards .card {
+  text-align: left;        /* Rata kiri semua teks */
+  padding: 25px 20px;      /* Memberi ruang di dalam card */
+  margin-bottom: 20px;     /* Jarak antar card secara vertikal */
+}
+
+/* Daftar syarat & prosedur */
+.program-detail .cards .card ul,
+.program-detail .cards .card ol {
+  padding-left: 20px;      /* Jarak indent daftar */
+  line-height: 1.6;        /* Jarak antar item list */
+  margin-top: 10px;         /* Jarak antara judul card dan list */
+}
+
+/* Untuk judul h3 di card */
+.program-detail .cards .card h3 {
+  margin-bottom: 15px;     /* Jarak antara judul dan isi list */
+  color: var(--secondary);
+}
+
+/* Responsive tetap oke */
+@media (max-width: 768px) {
+  .program-detail .cards .card {
+    padding: 20px 15px;
+  }
+}
+/* Jarak antar section di halaman program */
+.program-detail {
+  padding: 60px 10%;   /* jarak atas-bawah lebih lega */
+}
+
+.program-detail .cards {
+  margin-bottom: 40px; /* jarak antara cards dan section berikutnya */
+}
+
+.program-detail .galeri {
+  margin-top: 40px;    /* jarak atas galeri */
+  margin-bottom: 40px; /* jarak bawah galeri */
+}
+
+.program-detail .galeri .cards .card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
 
