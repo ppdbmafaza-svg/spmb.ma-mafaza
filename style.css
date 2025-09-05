@@ -173,23 +173,66 @@ h2 {
 .why-mafaza .card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--secondary); }
 .why-mafaza .card p { font-size: 0.95rem; line-height: 1.6; color: var(--primary); }
 
-/* ==================== PROGRAM ==================== */
-.program { background: linear-gradient(to bottom, var(--soft), var(--light)); }
-.program .intro { margin-bottom: 30px; font-size: 1rem; color: var(--primary); }
-.program .card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-.program .card h3 { margin-bottom: 10px; color: var(--secondary); }
-.program .card .desc { margin-bottom: 15px; font-size: 0.95rem; color: #333; }
+/* ==================== PROGRAM DETAIL ==================== */
+.program-detail {
+  padding: 60px 10%;
+  text-align: left;
+  background: linear-gradient(to bottom, var(--light), var(--soft));
+}
+.program-detail h2 { color: var(--secondary); margin-bottom: 25px; font-size: 2rem; }
+.program-detail p { font-size: 1rem; color: var(--primary); margin-bottom: 40px; line-height: 1.6; }
+.program-detail .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.program-detail .cards .card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+  flex: 1 1 calc(45% - 20px);
+  max-width: calc(45% - 20px);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 16px rgba(10,25,49,0.15);
+}
+.program-detail .cards .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(10,25,49,0.25);
+}
+.program-detail .cards .card h3 { margin-bottom: 15px; color: var(--secondary); }
+.program-detail .cards .card ul,
+.program-detail .cards .card ol { padding-left: 20px; line-height: 1.6; margin-top: 10px; }
 
-/* ==================== ADMISI ==================== */
-.admisi { background: linear-gradient(to bottom, var(--light), var(--soft)); }
-.admisi h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 40px; }
-.admisi .card { border-top: 6px solid var(--accent); box-shadow: 0 4px 12px rgba(10,25,49,0.15); padding: 25px 20px; text-align: center; }
-.admisi .card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(10,25,49,0.25); }
-.admisi .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--secondary); }
-.admisi .card p { font-size: 0.95rem; color: var(--primary); margin-bottom: 20px; }
-.btn-group { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
-.btn-group .btn-wa { flex: 1 1 auto; text-align: center; background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; transition: transform 0.2s, box-shadow 0.3s; }
-.btn-group .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.25); }
+/* Galeri Prestasi */
+.program-detail .galeri { margin-top: 40px; margin-bottom: 40px; text-align: center; }
+.program-detail .galeri h3 { color: var(--secondary); margin-bottom: 25px; }
+.program-detail .galeri .cards { justify-content: center; gap: 20px; }
+.program-detail .galeri .cards .card img { width: 100%; border-radius: 10px; object-fit: cover; }
+
+/* Formulir */
+.program-detail .btn-primary { display: inline-block; margin-top: 20px; }
+
+/* WhatsApp floating button */
+.whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 10000;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.whatsapp-chat:hover { transform: scale(1.1); }
+.whatsapp-chat img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ==================== FAQ ==================== */
 .faq { width: 100%; background: linear-gradient(to top, var(--secondary), var(--soft)); padding: 60px 10%; text-align: left; }
@@ -206,87 +249,21 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .cards .card { flex: 1 1 calc(33.33% - 20px); max-width: calc(33.33% - 20px); }
+  .program-detail .cards .card { flex: 1 1 calc(50% - 20px); max-width: calc(50% - 20px); }
 }
 @media (max-width: 768px) {
   .cards .card { flex: 1 1 calc(50% - 15px); max-width: calc(50% - 15px); }
   .navbar .nav-links { display: none; flex-direction: column; gap: 15px; background: var(--primary); position: absolute; top: 60px; right: 10%; padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
   .navbar .nav-links.active { display: flex; }
   .navbar .menu-toggle { display: block; }
+  section { padding: 40px 5%; }
+  .program-detail .cards .card { flex: 1 1 100%; max-width: 100%; padding: 20px 15px; }
+  .program-detail .galeri .cards { gap: 15px; }
 }
 @media (max-width: 480px) {
-  section { padding: 40px 5%; }
   .cards { gap: 10px; padding: 0 5px; }
   .cards .card { flex: 1 1 100%; max-width: 100%; }
   .bubble { bottom: -30px; }
+  .program-detail .galeri .cards .card img { height: auto; }
   @keyframes rise { 100% { transform: translateY(-500px) scale(1.2); } }
 }
-/* WhatsApp floating button */
-.whatsapp-chat {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  z-index: 10000;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-}
-
-.whatsapp-chat:hover {
-  transform: scale(1.1);
-}
-
-.whatsapp-chat img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* Program Detail Cards */
-.program-detail .cards .card {
-  text-align: left;        /* Rata kiri semua teks */
-  padding: 25px 20px;      /* Memberi ruang di dalam card */
-  margin-bottom: 20px;     /* Jarak antar card secara vertikal */
-}
-
-/* Daftar syarat & prosedur */
-.program-detail .cards .card ul,
-.program-detail .cards .card ol {
-  padding-left: 20px;      /* Jarak indent daftar */
-  line-height: 1.6;        /* Jarak antar item list */
-  margin-top: 10px;         /* Jarak antara judul card dan list */
-}
-
-/* Untuk judul h3 di card */
-.program-detail .cards .card h3 {
-  margin-bottom: 15px;     /* Jarak antara judul dan isi list */
-  color: var(--secondary);
-}
-
-/* Responsive tetap oke */
-@media (max-width: 768px) {
-  .program-detail .cards .card {
-    padding: 20px 15px;
-  }
-}
-/* Jarak antar section di halaman program */
-.program-detail {
-  padding: 60px 10%;   /* jarak atas-bawah lebih lega */
-}
-
-.program-detail .cards {
-  margin-bottom: 40px; /* jarak antara cards dan section berikutnya */
-}
-
-.program-detail .galeri {
-  margin-top: 40px;    /* jarak atas galeri */
-  margin-bottom: 40px; /* jarak bawah galeri */
-}
-
-.program-detail .galeri .cards .card img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
