@@ -1,4 +1,5 @@
-:root {
+/* ==================== ROOT VARIABLES ==================== */
+:root { 
   --primary: #0A1931;        
   --secondary: #1A3D63;      
   --accent: #4A7FA7;         
@@ -21,7 +22,7 @@ body {
 section {
   padding: 60px 10%;
   text-align: center;
-  background: transparent; /* supaya gradasi body terlihat */
+  background: transparent;
 }
 h2 {
   margin-bottom: 30px;
@@ -58,7 +59,12 @@ h2 {
 .navbar .nav-links a:hover {
   color: var(--accent);
 }
-.navbar .menu-toggle { display:none; cursor:pointer; font-size:1.5rem; color:var(--light-bg); }
+.navbar .menu-toggle { 
+  display:none; 
+  cursor:pointer; 
+  font-size:1.5rem; 
+  color:var(--light-bg); 
+}
 
 /* ==================== BANNER ==================== */
 .banner {
@@ -72,16 +78,13 @@ h2 {
   position: relative;
 }
 
-/* ==================== ALUR TIMELINE ==================== */
-.alur-timeline h3 {
-  color: var(--secondary);
-  margin-bottom: 30px;
-}
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+/* ==================== PROGRAM DETAIL ==================== */
+.program-detail-page { width: 100%; }
+.program-detail p { max-width: 700px; margin: 0 auto; font-size: 1rem; color: var(--primary); }
+
+/* ==================== TIMELINE ==================== */
+.alur-timeline h3 { color: var(--secondary); margin-bottom: 30px; }
+.timeline { display: flex; flex-direction: column; gap: 30px; }
 .timeline-item {
   display: flex;
   justify-content: center;
@@ -125,27 +128,52 @@ h2 {
   flex-wrap: nowrap;
   gap: 15px;
   overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   padding-bottom: 10px;
 }
 .galeri .cards::-webkit-scrollbar { height: 10px; }
 .galeri .cards::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; }
 .galeri .cards::-webkit-scrollbar-track { background: transparent; border-radius: 5px; }
-
 .galeri .cards .card {
   flex: 0 0 auto;
   width: 400px;
   border-radius: 12px;
   overflow: hidden;
   background: none;
+  scroll-snap-align: start;
 }
 .galeri .cards .card img {
   width: 100%;
   height: auto;
   object-fit: cover;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
-.galeri .cards .card img:hover {
-  transform: scale(1.05);
+.galeri .cards .card img:hover { transform: scale(1.05); }
+
+/* ==================== LIGHTBOX ==================== */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+.lightbox .close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
 
 /* ==================== TOMBOL FORMULIR ==================== */
@@ -154,9 +182,9 @@ h2 {
   justify-content: center;
   padding: 40px 0;
   border-radius: 14px;
-  background: transparent; /* biar gradasi nyambung */
+  background: transparent;
 }
-.btn-primary {
+.btn-primary-section .btn-primary { 
   display: inline-block;
   background: linear-gradient(135deg, var(--secondary), var(--accent));
   color: white;
@@ -166,7 +194,7 @@ h2 {
   text-align: center;
   transition: transform 0.2s, box-shadow 0.3s;
 }
-.btn-primary:hover {
+.btn-primary-section .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
@@ -180,13 +208,27 @@ h2 {
   height: 60px;
   z-index: 1000;
 }
-.whatsapp-chat img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.whatsapp-chat img { width: 100%; height: 100%; object-fit: contain; }
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 1024px) { .timeline-item { flex-direction: column; gap: 15px; } }
-@media (max-width: 768px) { section { padding: 40px 5%; } .galeri .cards { gap: 10px; } }
-@media (max-width: 480px) { .btn-primary { width: 100%; padding: 12px 20px; } .galeri .cards .card { width: 80%; } }
+@media (max-width: 1024px) { 
+  .timeline-item { flex-direction: column; gap: 15px; }
+  .galeri .cards .card { width: 300px; }
+}
+@media (max-width: 768px) { 
+  section { padding: 40px 5%; }
+  .galeri .cards { gap: 10px; }
+  .galeri .cards .card { width: 80%; }
+  .btn-primary-section .btn-primary { width: 100%; padding: 12px 20px; }
+}
+@media (max-width: 480px) { 
+  .galeri .cards .card { width: 90%; }
+}
