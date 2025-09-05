@@ -13,15 +13,16 @@
   color: var(--primary);
 }
 
-/* ==================== GRADASI SECTION ==================== */
+/* ==================== GRADASI SECTION (SAMBUNG) ==================== */
 .program-detail, 
 .alur-timeline, 
-.galeri {
+.galeri,
+.btn-primary-section {
   position: relative;
   background: linear-gradient(to bottom, var(--light-bg), var(--gradient-light));
   padding: 60px 10%;
   border-radius: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 0; /* hilangkan jarak antar section */
 }
 
 /* ==================== ALUR TIMELINE ==================== */
@@ -109,9 +110,7 @@
 .btn-primary-section {
   display: flex;
   justify-content: center;
-  background: linear-gradient(to bottom, var(--gradient-light) 0%, var(--light-bg) 100%);
   padding: 40px 0;
-  border-radius: 14px;
 }
 .btn-primary {
   display: inline-block;
