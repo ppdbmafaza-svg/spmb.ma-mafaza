@@ -105,13 +105,14 @@ h3 {
 
 /* ==================== TIMELINE ==================== */
 .alur-timeline h3.timeline-title {
-  margin-bottom: 12px; /* jarak ke card lebih pas */
+  margin-top: 20px; /* jarak dari section sebelumnya */
+  margin-bottom: 12px; /* jarak ke card */
 }
 
 .alur-timeline .timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* jarak antar item lebih compact */
+  gap: 20px; /* antar item lebih compact */
 }
 
 .timeline-item {
@@ -186,6 +187,7 @@ h3 {
   overflow: hidden;
   background: none;
   scroll-snap-align: start;
+  margin-top: 10px; /* jarak atas card lebih pas */
 }
 
 .galeri .cards .card img {
@@ -284,7 +286,7 @@ footer {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-  margin: 15px auto;
+  margin: 20px auto; /* jarak vertikal antar card lebih lega */
   max-width: 700px;
   text-align: left;
 }
@@ -324,6 +326,7 @@ footer {
   }
 
   .alur-timeline h3.timeline-title {
+    margin-top: 15px;
     margin-bottom: 10px;
   }
 
