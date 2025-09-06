@@ -105,21 +105,20 @@ h3 {
 
 /* ==================== TIMELINE ==================== */
 /* RAPATKAN DESKRIPSI DAN JUDUL TIMELINE */
-.program-detail {
-  margin-bottom: 10px; /* rapatkan jarak ke section timeline */
+/* Rapatkan jarak antara deskripsi program & timeline pertama */
+.program-intro {
+  margin-bottom: 5px; /* rapatkan ke timeline pertama */
 }
 
-.program-detail p {
-  margin-bottom: 5px; /* rapatkan paragraf */
+.program-intro p {
+  margin-bottom: 0; /* hapus space bawah paragraf */
 }
 
-.alur-timeline {
-  padding-top: 10px; /* lebih rapat dari section sebelumnya */
+.alur-timeline:first-of-type h3.timeline-title {
+  margin-top: 10px; /* cukup rapat ke atas */
+  margin-bottom: 12px; /* jarak ke card tetap wajar */
 }
 
-.alur-timeline h3.timeline-title {
-  margin-top: 5px; /* rapatkan ke atas */
-  margin-bottom: 10px; /* jarak wajar ke card */
 
 .alur-timeline .timeline {
   display: flex;
