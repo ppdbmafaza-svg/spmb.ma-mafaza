@@ -103,25 +103,26 @@ h3 {
   color: var(--primary);
 }
 
-/* ==================== SPACING KHUSUS ==================== */
+/* ==================== SPACING SUPER COMPACT ==================== */
 .program-detail-page .program-detail {
-  margin-bottom: 10px; /* rapat ke timeline pertama */
+  margin-bottom: 0px; /* rapat ke timeline pertama */
 }
 
 .program-detail-page .alur-timeline:first-of-type {
-  margin-top: 5px; /* timeline pertama lebih dekat */
+  margin-top: 0px; /* hilangkan jarak atas */
 }
 
-.program-detail-page .alur-timeline h3.timeline-title {
-  margin-top: 10px;
-  margin-bottom: 12px;
+.alur-timeline h3.timeline-title {
+  margin-top: 5px;
+  margin-bottom: 8px; /* rapat ke content */
+  font-size: 1.05rem; /* masih readable */
 }
 
 /* ==================== TIMELINE ==================== */
 .alur-timeline .timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px; /* lebih rapat */
 }
 
 .timeline-item {
@@ -147,9 +148,10 @@ h3 {
   text-align: left;
   max-width: 500px;
   background: white;
-  padding: 20px;
+  padding: 12px 15px; /* lebih compact */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
+  font-size: 0.95rem; /* ringkas */
 }
 
 .timeline-item .content h4 {
@@ -159,8 +161,8 @@ h3 {
 
 .timeline-item .content ul,
 .timeline-item .content ol {
-  margin-left: 20px;
-  line-height: 1.6;
+  margin-left: 15px;
+  line-height: 1.5;
   color: var(--primary);
 }
 
@@ -244,7 +246,7 @@ h3 {
 .btn-primary-section {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 30px 0; /* lebih rapat */
   border-radius: 14px;
   background: transparent;
 }
@@ -321,7 +323,7 @@ footer {
 @media (max-width: 1024px) {
   .timeline-item {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
 
   .galeri .cards .card {
@@ -335,8 +337,8 @@ footer {
   }
 
   .alur-timeline h3.timeline-title {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 6px;
   }
 
   .galeri .cards {
