@@ -104,14 +104,22 @@ h3 {
 }
 
 /* ==================== TIMELINE ==================== */
+/* RAPATKAN DESKRIPSI DAN JUDUL TIMELINE */
+.program-detail {
+  margin-bottom: 10px; /* rapatkan jarak ke section timeline */
+}
+
 .program-detail p {
-  margin-bottom: 10px; /* default 16-20px biasanya, kita rapatkan */
+  margin-bottom: 5px; /* rapatkan paragraf */
+}
+
+.alur-timeline {
+  padding-top: 10px; /* lebih rapat dari section sebelumnya */
 }
 
 .alur-timeline h3.timeline-title {
-  margin-top: 5px;   /* atau 0px kalau mau rapat banget */
-  margin-bottom: 12px;
-}
+  margin-top: 5px; /* rapatkan ke atas */
+  margin-bottom: 10px; /* jarak wajar ke card */
 
 .alur-timeline .timeline {
   display: flex;
