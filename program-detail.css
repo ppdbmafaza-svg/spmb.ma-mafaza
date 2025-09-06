@@ -105,7 +105,7 @@ h3 {
 
 /* ==================== TIMELINE ==================== */
 .alur-timeline h3.timeline-title {
-  margin-top: 20px; /* jarak dari section sebelumnya */
+  margin-top: 5px; /* jarak dari section sebelumnya */
   margin-bottom: 12px; /* jarak ke card */
 }
 
