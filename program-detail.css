@@ -104,8 +104,8 @@ h3 {
 }
 
 /* ==================== TIMELINE ==================== */
-.alur-timeline h3 {
-  margin-bottom: 15px; /* jarak lebih pas ke card */
+.alur-timeline h3.timeline-title {
+  margin-bottom: 12px; /* jarak ke card lebih pas */
 }
 
 .alur-timeline .timeline {
@@ -323,8 +323,8 @@ footer {
     padding: 40px 5%;
   }
 
-  .alur-timeline h3 {
-    margin-bottom: 12px; /* pas di mobile */
+  .alur-timeline h3.timeline-title {
+    margin-bottom: 10px;
   }
 
   .galeri .cards {
