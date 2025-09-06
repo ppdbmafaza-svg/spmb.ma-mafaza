@@ -1,4 +1,4 @@
-/* ==================== ROOT VARIABLES ==================== */
+/* ==================== GLOBAL / ROOT ==================== */
 :root { 
   --primary: #0A1931;        
   --secondary: #1A3D63;      
@@ -7,25 +7,28 @@
   --gradient-light: #B3CFE5; 
 }
 
-/* ==================== GLOBAL ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "PlusJakartaSans", sans-serif;
 }
+
 body {
   background: linear-gradient(to bottom, var(--light-bg), var(--gradient-light) 50%, var(--light-bg) 100%);
   color: var(--primary);
   line-height: 1.6;
 }
+
+/* ==================== SECTION ==================== */
 section {
-  padding: 60px 10%;
+  padding: 40px 8%; /* dikurangi dari 60px ke 40px, dan 10% ke 8% */
   text-align: center;
   background: transparent;
 }
+
 h2 {
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* dikurangi dari 30px */
   color: var(--secondary);
 }
 
@@ -35,241 +38,60 @@ h2 {
   justify-content: space-between;
   align-items: center;
   background: var(--primary);
-  padding: 15px 10%;
+  padding: 12px 8%; /* dikurangi padding */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-.navbar .logo a {
-  color: var(--light-bg);
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-.navbar .nav-links {
-  display: flex;
-  gap: 25px;
-}
-.navbar .nav-links a {
-  color: var(--light-bg);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-.navbar .nav-links a:hover {
-  color: var(--accent);
-}
-.navbar .menu-toggle { 
-  display:none; 
-  cursor:pointer; 
-  font-size:1.5rem; 
-  color:var(--light-bg); 
-}
-
-/* ==================== BANNER ==================== */
-.banner {
-  background: url('banner.PNG') no-repeat center center/cover;
-  height: 80vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 20px;
-  position: relative;
-}
 
 /* ==================== PROGRAM DETAIL ==================== */
 .program-detail-page { width: 100%; }
-.program-detail p { max-width: 700px; margin: 0 auto; font-size: 1rem; color: var(--primary); }
+.program-detail p { 
+  max-width: 650px; /* sedikit dikurangi dari 700px */
+  margin: 0 auto; 
+  font-size: 1rem; 
+  color: var(--primary);
+  margin-bottom: 20px; /* spacing bawah dikurangi */
+}
 
 /* ==================== TIMELINE ==================== */
-.alur-timeline h3 { color: var(--secondary); margin-bottom: 30px; }
-.timeline { display: flex; flex-direction: column; gap: 30px; }
-.timeline-item {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
+.alur-timeline h3 { 
+  color: var(--secondary); 
+  margin-bottom: 20px; /* dikurangi dari 30px */
 }
-.timeline-item .circle {
-  min-width: 40px;
-  min-height: 40px;
-  background: var(--secondary);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+.timeline { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; /* dikurangi gap dari 30px */
 }
 .timeline-item .content {
-  text-align: left;
-  max-width: 500px;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-}
-.timeline-item .content h4 {
-  margin-bottom: 10px;
-  color: var(--secondary);
-}
-.timeline-item .content ul,
-.timeline-item .content ol {
-  margin-left: 20px;
-  line-height: 1.6;
-  color: var(--primary);
+  padding: 15px; /* dikurangi dari 20px */
 }
 
 /* ==================== GALERI HORIZONTAL ==================== */
-.galeri h3 { color: var(--secondary); margin-bottom: 20px; }
-.galeri .cards {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
+.galeri h3 { 
+  color: var(--secondary); 
+  margin-bottom: 15px; /* dikurangi dari 20px */
 }
-.galeri .cards::-webkit-scrollbar { height: 10px; }
-.galeri .cards::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; }
-.galeri .cards::-webkit-scrollbar-track { background: transparent; border-radius: 5px; }
-.galeri .cards .card {
-  flex: 0 0 auto;
-  width: 400px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: none;
-  scroll-snap-align: start;
-}
-.galeri .cards .card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-.galeri .cards .card img:hover { transform: scale(1.05); }
+.galeri .cards { padding-bottom: 5px; } /* dikurangi dari 10px */
 
-/* ==================== LIGHTBOX ==================== */
-.lightbox {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
+/* ==================== CARD HALAMAN PROGRAM DETAIL ==================== */
+.program-detail-page .card {
+  margin: 10px auto; /* dikurangi dari 15px */
+  padding: 15px; /* dikurangi dari 20px */
+  max-width: 650px; /* dikurangi dari 700px */
 }
-.lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-.lightbox .close {
-  position: absolute;
-  top: 20px; right: 30px;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+.program-detail-page .card h3 { 
+  margin-bottom: 8px; /* dikurangi dari 10px */
 }
 
 /* ==================== TOMBOL FORMULIR ==================== */
 .btn-primary-section {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
-  border-radius: 14px;
-  background: transparent;
-}
-.btn-primary-section .btn-primary { 
-  display: inline-block;
-  background: linear-gradient(135deg, var(--secondary), var(--accent));
-  color: white;
-  padding: 14px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-.btn-primary-section .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-/* ==================== WHATSAPP FLOATING ==================== */
-.whatsapp-chat {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  z-index: 1000;
-}
-.whatsapp-chat img { width: 100%; height: 100%; object-fit: contain; }
-
-/* ==================== FOOTER ==================== */
-footer {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* ==================== CARD DI HALAMAN PROGRAM DETAIL ==================== */
-.program-detail-page .card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-  margin: 15px auto;
-  max-width: 700px;
-  text-align: left;
-}
-.program-detail-page .card h3 {
-  color: var(--secondary);
-  margin-bottom: 10px;
-}
-.program-detail-page .card p,
-.program-detail-page .card ul,
-.program-detail-page .card ol {
-  color: var(--primary);
-  line-height: 1.6;
-}
-.program-detail-page .card ul,
-.program-detail-page .card ol {
-  margin-left: 20px;
+  padding: 30px 0; /* dikurangi dari 40px */
 }
 
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 1024px) { 
-  .timeline-item { flex-direction: column; gap: 15px; }
-  .galeri .cards .card { width: 300px; }
-}
 @media (max-width: 768px) { 
-  section { padding: 40px 5%; }
-  .galeri .cards { gap: 10px; }
-  .galeri .cards .card { width: 80%; }
-  .btn-primary-section .btn-primary { width: 100%; padding: 12px 20px; }
-
-  /* HAMBURGER FIX MOBILE */
-  .navbar .nav-links { 
-    display: none; 
-    flex-direction: column; 
-    gap: 15px; 
-    background: var(--primary);
-    position: absolute; 
-    top: 60px; 
-    right: 10%; 
-    padding: 10px 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  .navbar .nav-links.active { display: flex; }
-  .navbar .menu-toggle { display: block; }
-}
-@media (max-width: 480px) { 
-  .galeri .cards .card { width: 90%; }
+  section { padding: 30px 5%; } /* dikurangi dari 40px */
+  .btn-primary-section .btn-primary { padding: 10px 18px; } /* dikurangi */
 }
