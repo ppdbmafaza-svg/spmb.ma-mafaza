@@ -104,9 +104,13 @@ h3 {
 }
 
 /* ==================== TIMELINE ==================== */
+.program-detail p {
+  margin-bottom: 10px; /* default 16-20px biasanya, kita rapatkan */
+}
+
 .alur-timeline h3.timeline-title {
-  margin-top: 0px; /* jarak dari section sebelumnya */
-  margin-bottom: 12px; /* jarak ke card */
+  margin-top: 5px;   /* atau 0px kalau mau rapat banget */
+  margin-bottom: 12px;
 }
 
 .alur-timeline .timeline {
