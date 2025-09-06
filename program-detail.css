@@ -103,69 +103,6 @@ h3 {
   color: var(--primary);
 }
 
-/* ==================== TIMELINE ==================== */
-/* RAPATKAN DESKRIPSI DAN JUDUL TIMELINE */
-/* Rapatkan jarak antara deskripsi program & timeline pertama */
-.program-intro {
-  margin-bottom: 5px; /* rapatkan ke timeline pertama */
-}
-
-.program-intro p {
-  margin-bottom: 0; /* hapus space bawah paragraf */
-}
-
-.alur-timeline:first-of-type h3.timeline-title {
-  margin-top: 10px; /* cukup rapat ke atas */
-  margin-bottom: 12px; /* jarak ke card tetap wajar */
-}
-
-
-.alur-timeline .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* antar item lebih compact */
-}
-
-.timeline-item {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.timeline-item .circle {
-  min-width: 40px;
-  min-height: 40px;
-  background: var(--secondary);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.timeline-item .content {
-  text-align: left;
-  max-width: 500px;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-}
-
-.timeline-item .content h4 {
-  margin-bottom: 10px;
-  color: var(--secondary);
-}
-
-.timeline-item .content ul,
-.timeline-item .content ol {
-  margin-left: 20px;
-  line-height: 1.6;
-  color: var(--primary);
-}
-
 /* ==================== GALERI HORIZONTAL ==================== */
 .galeri .cards {
   display: flex;
