@@ -33,7 +33,8 @@ h2 {
 }
 
 h3 {
-  margin-bottom: 15px; /* dikurangi dari 20px supaya lebih rapat */
+  margin-bottom: 20px;
+  color: var(--secondary);
 }
 
 /* ==================== NAVBAR ==================== */
@@ -95,10 +96,6 @@ h3 {
   width: 100%;
 }
 
-.program-detail {
-  margin-bottom: 20px; /* kurangi jarak antara judul Beasiswa dengan daftar foto/scan */
-}
-
 .program-detail p {
   max-width: 700px;
   margin: 0 auto;
@@ -107,10 +104,14 @@ h3 {
 }
 
 /* ==================== TIMELINE ==================== */
+.alur-timeline h3 {
+  margin-bottom: 15px; /* jarak lebih pas ke card */
+}
+
 .alur-timeline .timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* dikurangi dari 30px supaya lebih rapat */
+  gap: 20px; /* jarak antar item lebih compact */
 }
 
 .timeline-item {
@@ -136,7 +137,7 @@ h3 {
   text-align: left;
   max-width: 500px;
   background: white;
-  padding: 15px; /* dikurangi supaya lebih rapat dengan judul Prosedur */
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
 }
@@ -320,6 +321,10 @@ footer {
 @media (max-width: 768px) {
   section {
     padding: 40px 5%;
+  }
+
+  .alur-timeline h3 {
+    margin-bottom: 12px; /* pas di mobile */
   }
 
   .galeri .cards {
