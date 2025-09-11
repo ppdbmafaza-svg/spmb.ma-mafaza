@@ -91,7 +91,6 @@ h3 {
   position: relative;
 }
 
-/* ==================== PROGRAM DETAIL ==================== */
 .program-detail {
   background: #fff;
   border-radius: 12px;
@@ -102,7 +101,7 @@ h3 {
 
 .program-detail h3 {
   margin-bottom: 12px;
-  color: var(--primary);
+  color: var(--primary, #0A1931);
 }
 
 .program-detail ul {
@@ -110,6 +109,7 @@ h3 {
   padding-left: 20px;
 }
 
+/* ==================== PROGRAM DETAIL ==================== */
 .program-detail-page {
   width: 100%;
 }
@@ -123,24 +123,24 @@ h3 {
 
 /* ==================== SPACING SUPER COMPACT ==================== */
 .program-detail-page .program-detail {
-  margin-bottom: 0;
+  margin-bottom: 0px; /* rapat ke timeline pertama */
 }
 
 .program-detail-page .alur-timeline:first-of-type {
-  margin-top: 0;
+  margin-top: 0px; /* hilangkan jarak atas */
 }
 
 .alur-timeline h3.timeline-title {
   margin-top: 5px;
-  margin-bottom: 8px;
-  font-size: 1.05rem;
+  margin-bottom: 8px; /* rapat ke content */
+  font-size: 1.05rem; /* masih readable */
 }
 
 /* ==================== TIMELINE ==================== */
 .alur-timeline .timeline {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* lebih rapat */
 }
 
 .timeline-item {
@@ -166,10 +166,10 @@ h3 {
   text-align: left;
   max-width: 500px;
   background: white;
-  padding: 12px 15px;
+  padding: 12px 15px; /* lebih compact */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-  font-size: 0.95rem;
+  font-size: 0.95rem; /* ringkas */
 }
 
 .timeline-item .content h4 {
@@ -264,7 +264,7 @@ h3 {
 .btn-primary-section {
   display: flex;
   justify-content: center;
-  padding: 30px 0;
+  padding: 30px 0; /* lebih rapat */
   border-radius: 14px;
   background: transparent;
 }
