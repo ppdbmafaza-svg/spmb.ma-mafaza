@@ -25,19 +25,18 @@
 
   <!-- Banner -->
   <section class="banner">
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="container">
-    <!-- Banner umum bisa dipasang di sini -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
   </section>
 
   <!-- Detail Program -->
   <div class="program-detail-page">
 
-    <section class="program-detail">
+    <!-- Program Info -->
+    <section class="program-detail program-intro">
       <h2>Jalur Reguler</h2>
       <p>
         Jalur umum bagi semua calon siswa tanpa syarat khusus selain dokumen standar. 
@@ -45,56 +44,61 @@
       </p>
     </section>
 
-    <!-- Alur Pendaftaran -->
+    <!-- Syarat & Prosedur Timeline -->
     <section class="alur-timeline">
-      <h3>Alur Pendaftaran Jalur Reguler</h3>
-      <div class="timeline">
 
+      <h3 class="timeline-title">Foto/scan dokumen yang perlu dipersiapkan sebelum mengisi formulir</h3>
+      <div class="timeline">
         <div class="timeline-item">
-          <div class="circle">1</div>
           <div class="content">
-            <h4>Syarat Pendaftaran</h4>
             <ul>
               <li>Foto Formal Siswa Ukuran 3×4</li>
               <li>Scan/Foto Raport 4-5 semester terakhir</li>
-              <li>Scan/Foto sertifikat TKA [Tes Kompetensi Akademik]</li>
-              <li>Scan/ Foto Kartu Keluarga</li>
-              <li>Scan/ Foto Kartu Pelajar</li>
-              <li>Scan/ Foto prestasi atau capaian tahfidz yang pernah diraih [Jika Ada]</li>
-              <li>Scan/ Foto Surat Keterangan Kelakuan Baik (SKKB) dari sekolah asal</li>
-              <li>Scan/ Foto Akta Kelahiran</li>
-              <li>Scan/ Foto KTP Ayah</li>
-              <li>Scan/ Foto Slip Gaji Ayah (wiraswasta menggunakan surat keterangan dari kelurahan)</li>
-              <li>Scan/ Foto KTP Ibu</li>
-              <li>Scan/ Foto Slip Gaji Ibu (wiraswasta, ibu rumah tangga menggunakan surat keterangan dari kelurahan)</li>
-              <li>Scan/ Foto Akta atau Surat Keterangan Kematian Orangtua dari Kelurahan (Jika Ada)</li>
-              <li>Scan/ Foto KTP Wali (Jika Ada)</li>
-              <li>Scan/ Foto Akta atau Surat Keterangan Kematian Orangtua dari Kelurahan (Jika Ada)</li>
+              <li>Scan/Foto Sertifikat TKA (Tes Kompetensi Akademik)</li>
+              <li>Scan/Foto Kartu Keluarga</li>
+              <li>Scan/Foto Kartu Pelajar</li>
+              <li>Scan/Foto Prestasi atau capaian tahfidz yang pernah diraih (Jika Ada)</li>
+              <li>Scan/Foto Surat Keterangan Kelakuan Baik (SKKB) dari sekolah asal</li>
+              <li>Scan/Foto Akta Kelahiran</li>
+              <li>Scan/Foto KTP Ayah</li>
+              <li>Scan/Foto Slip Gaji Ayah (wiraswasta menggunakan surat keterangan dari kelurahan)</li>
+              <li>Scan/Foto KTP Ibu</li>
+              <li>Scan/Foto Slip Gaji Ibu (wiraswasta/IRT menggunakan surat keterangan dari kelurahan)</li>
+              <li>Scan/Foto Akta atau Surat Keterangan Kematian Orangtua dari Kelurahan (Jika Ada)</li>
+              <li>Scan/Foto KTP Wali (Jika Ada)</li>
             </ul>
           </div>
         </div>
+      </div>
 
+      <h3 class="timeline-title">Prosedur & Tahapan</h3>
+      <div class="timeline">
         <div class="timeline-item">
-          <div class="circle">2</div>
           <div class="content">
-            <h4>Prosedur & Tahapan</h4>
             <ol>
               <li>Isi formulir pendaftaran online melalui tombol di bawah</li>
-              <li>Unggah dokumen persyaratan sesuai daftar</li>
-              <li>Seleksi administrasi oleh panitia</li>
-              <li>Wawancara singkat (jika diperlukan)</li>
-              <li>Pengumuman hasil pendaftaran melalui website & WhatsApp</li>
-              <li>Registrasi dan orientasi siswa baru</li>
+              <li>Unggah dokumen persyaratan sesuai jalur pendaftar</li>
+              <li>Seleksi Seleksi tes akademik dan tahfidz oleh panitia</li>
+              <li>Wawancara & observasi singkat</li>
+              <li>Pengumuman hasil pendaftaran melalui WhatsApp</li>
+              <li>Registrasi Ulang</li>
             </ol>
           </div>
         </div>
-
       </div>
+
+    </section>
+
+    <!-- Tombol Formulir -->
+    <section class="btn-primary-section">
+      <a href="https://forms.gle/JKSrw5qcvCTwVjEs5" class="btn-primary" target="_blank">
+        Isi Formulir Pendaftaran
+      </a>
     </section>
 
     <!-- Galeri Horizontal -->
     <section class="galeri">
-      <h3>Galeri Kegiatan & Prestasi</h3>
+      <h3>Galeri Prestasi</h3>
       <div class="cards">
         <div class="card"><img src="kegiatan-siswa(1).jpg" alt="Kegiatan 1"></div>
         <div class="card"><img src="kegiatan-siswa(2).jpg" alt="Kegiatan 2"></div>
@@ -102,17 +106,6 @@
         <div class="card"><img src="prestasi(2).jpg" alt="Prestasi 2"></div>
         <div class="card"><img src="bukti-nyata(1).jpg" alt="Bukti Lulusan 1"></div>
       </div>
-    </section>
-
-        <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-      <span class="close">&times;</span>
-      <img class="lightbox-img" src="" alt="">
-    </div>
-    
-    <!-- Tombol Formulir -->
-    <section class="btn-primary-section">
-      <a href="https://forms.gle/JKSrw5qcvCTwVjEs5" class="btn-primary" target="_blank">Isi Formulir Pendaftaran</a>
     </section>
 
     <!-- WhatsApp Floating Button -->
@@ -125,7 +118,6 @@
   <!-- Footer -->
   <footer id="kontak">
     <h2>Kontak Panitia</h2>
-    <p>Nomer HP: Ustadzah Adel (+6281259087731) & Ustadz Lukman (+6281234567890)</p>
     <p>Email: ppdbmafaza@gmail.com</p>
     <p>Lokasi: Jl. Wonosari No. 4, Pringgolayan, Banguntapan, Bantul, Yogyakarta</p>
     <small>&copy; 2025 MA MAFAZA. All rights reserved.</small>
