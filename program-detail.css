@@ -91,17 +91,20 @@ h3 {
   position: relative;
 }
 
+/* ==================== PROGRAM DETAIL ==================== */
 .program-detail {
   background: #fff;
   border-radius: 12px;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 800px;
+  text-align: left;
 }
 
 .program-detail h3 {
   margin-bottom: 12px;
-  color: var(--primary, #0A1931);
+  color: var(--primary);
 }
 
 .program-detail ul {
@@ -109,82 +112,40 @@ h3 {
   padding-left: 20px;
 }
 
-/* ==================== PROGRAM DETAIL ==================== */
-.program-detail-page {
-  width: 100%;
-}
-
-.program-detail-page .program-detail p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1rem;
-  color: var(--primary);
-}
-
-/* ==================== SPACING SUPER COMPACT ==================== */
-.program-detail-page .program-detail {
-  margin-bottom: 0px; /* rapat ke timeline pertama */
-}
-
-.program-detail-page .alur-timeline:first-of-type {
-  margin-top: 0px; /* hilangkan jarak atas */
+/* ==================== TIMELINE ==================== */
+.alur-timeline {
+  margin-top: 20px;
 }
 
 .alur-timeline h3.timeline-title {
-  margin-top: 5px;
-  margin-bottom: 8px; /* rapat ke content */
-  font-size: 1.05rem; /* masih readable */
-}
-
-/* ==================== TIMELINE ==================== */
-.alur-timeline .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* lebih rapat */
-}
-
-.timeline-item {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.timeline-item .circle {
-  min-width: 40px;
-  min-height: 40px;
-  background: var(--secondary);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
-.timeline-item .content {
+.timeline-content {
   text-align: left;
-  max-width: 500px;
+  max-width: 700px;
+  margin: 15px auto;
   background: white;
-  padding: 12px 15px; /* lebih compact */
+  padding: 15px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-  font-size: 0.95rem; /* ringkas */
 }
 
-.timeline-item .content h4 {
-  margin-bottom: 10px;
+.timeline-content h4 {
+  margin-bottom: 8px;
   color: var(--secondary);
 }
 
-.timeline-item .content ul,
-.timeline-item .content ol {
-  margin-left: 15px;
-  line-height: 1.5;
+.timeline-content ul,
+.timeline-content ol {
+  margin-left: 20px;
+  line-height: 1.6;
   color: var(--primary);
 }
 
-/* ==================== GALERI HORIZONTAL ==================== */
+/* ==================== GALERI ==================== */
 .galeri .cards {
   display: flex;
   flex-wrap: nowrap;
@@ -206,17 +167,15 @@ h3 {
 
 .galeri .cards::-webkit-scrollbar-track {
   background: transparent;
-  border-radius: 5px;
 }
 
 .galeri .cards .card {
   flex: 0 0 auto;
-  width: 400px;
+  width: 350px;
   border-radius: 12px;
   overflow: hidden;
   background: none;
   scroll-snap-align: start;
-  margin-top: 10px;
 }
 
 .galeri .cards .card img {
@@ -231,42 +190,11 @@ h3 {
   transform: scale(1.05);
 }
 
-/* ==================== LIGHTBOX ==================== */
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-
-.lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
 /* ==================== TOMBOL FORMULIR ==================== */
 .btn-primary-section {
   display: flex;
   justify-content: center;
-  padding: 30px 0; /* lebih rapat */
-  border-radius: 14px;
-  background: transparent;
+  padding: 30px 0;
 }
 
 .btn-primary-section .btn-primary {
@@ -276,7 +204,6 @@ h3 {
   padding: 14px 28px;
   border-radius: 12px;
   text-decoration: none;
-  text-align: center;
   transition: transform 0.2s, box-shadow 0.3s;
 }
 
@@ -285,7 +212,7 @@ h3 {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* ==================== WHATSAPP FLOATING ==================== */
+/* ==================== WHATSAPP FLOAT ==================== */
 .whatsapp-chat {
   position: fixed;
   bottom: 25px;
@@ -309,58 +236,16 @@ footer {
   padding: 20px;
 }
 
-/* ==================== CARD DI HALAMAN PROGRAM DETAIL ==================== */
-.program-detail-page .card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(10,25,49,0.1);
-  margin: 20px auto;
-  max-width: 700px;
-  text-align: left;
-}
-
-.program-detail-page .card h3 {
-  color: var(--secondary);
-  margin-bottom: 10px;
-}
-
-.program-detail-page .card p,
-.program-detail-page .card ul,
-.program-detail-page .card ol {
-  color: var(--primary);
-  line-height: 1.6;
-}
-
-.program-detail-page .card ul,
-.program-detail-page .card ol {
-  margin-left: 20px;
-}
-
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
-  .timeline-item {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .galeri .cards .card {
-    width: 300px;
+    width: 280px;
   }
 }
 
 @media (max-width: 768px) {
   section {
     padding: 40px 5%;
-  }
-
-  .alur-timeline h3.timeline-title {
-    margin-top: 10px;
-    margin-bottom: 6px;
-  }
-
-  .galeri .cards {
-    gap: 10px;
   }
 
   .galeri .cards .card {
