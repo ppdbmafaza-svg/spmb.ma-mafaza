@@ -179,3 +179,65 @@ footer { background:var(--primary); color:white; text-align:center; padding:20px
   50% { opacity: 0.4; }
   100% { transform: translateY(-900px) scale(1.3); opacity: 0; }
 }
+
+@media (max-width: 1024px) {
+  .timeline-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .galeri .cards .card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 5%;
+  }
+
+  .alur-timeline h3.timeline-title {
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+
+  .galeri .cards {
+    gap: 10px;
+  }
+
+  .galeri .cards .card {
+    width: 80%;
+  }
+
+  .btn-primary-section .btn-primary {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--primary);
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeri .cards .card {
+    width: 90%;
+  }
+}
