@@ -120,6 +120,34 @@ h2 { margin-bottom:30px; color:var(--secondary); }
 .galeri .cards .card img:hover {
   transform: scale(1.05);
 }
+/* ==================== LIGHTBOX ==================== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
 
 
 /* ==================== FOOTER ==================== */
