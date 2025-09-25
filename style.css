@@ -74,14 +74,53 @@ h2 { margin-bottom:30px; color:var(--secondary); }
 .admisi .btn-group .btn-wa { flex:1 1 auto; min-width:150px; text-align:center; background: linear-gradient(135deg,var(--secondary),var(--accent)); color:white; padding:12px 24px; border-radius:10px; text-decoration:none; transition: transform 0.2s, box-shadow 0.3s; }
 .admisi .btn-group .btn-wa:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.25); }
 
-/* ==================== FAQ ==================== */
-.faq { width:100%; background: linear-gradient(to top,var(--secondary),var(--soft)); padding:60px 10%; text-align:left; }
-.faq h2 { text-align:center; font-size:2rem; margin-bottom:40px; color:var(--secondary); }
-.faq-container { max-width:800px; margin:0 auto; }
-.faq details { background:white; border:1px solid var(--soft); border-radius:10px; padding:15px 20px; margin-bottom:15px; box-shadow:0 4px 10px rgba(0,0,0,0.08); cursor:pointer; transition: all 0.3s ease; }
-.faq details:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
-.faq summary { font-weight:600; color:var(--primary); }
-.faq p { margin-top:10px; color:#333; }
+//* ==================== GALERI HORIZONTAL ==================== */
+.galeri .cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.galeri .cards::-webkit-scrollbar {
+  height: 10px;
+}
+
+.galeri .cards::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+.galeri .cards::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+.galeri .cards .card {
+  flex: 0 0 auto;
+  width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: none;
+  scroll-snap-align: start;
+  margin-top: 10px;
+}
+
+.galeri .cards .card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.galeri .cards .card img:hover {
+  transform: scale(1.05);
+}
+
 
 /* ==================== FOOTER ==================== */
 footer { background:var(--primary); color:white; text-align:center; padding:20px; }
