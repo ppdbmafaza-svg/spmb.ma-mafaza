@@ -70,11 +70,15 @@ h2 { margin-bottom:30px; color:var(--secondary); }
 
 /* >>> TAMBAHAN <<< tombol WA jadi vertikal full width */
 .admisi .btn-group {
-  flex-direction: column;
-  align-items: stretch;
+  display: flex;
+  flex-direction: row; /* horizontal */
+  gap: 15px;
+  justify-content: center; /* tengah */
+  flex-wrap: wrap; /* responsif kalau layar kecil */
 }
+
 .admisi .btn-group .btn-wa {
-  width: 100%;
+  flex: 1; /* lebar sama */
   text-align: center;
 }
 
